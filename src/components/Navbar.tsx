@@ -6,10 +6,28 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      
+      // Update active section based on scroll position
+      const sections = ["home", "about", "projects", "services", "contact"];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const height = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
     
     window.addEventListener("scroll", handleScroll);
@@ -25,11 +43,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white bg-opacity-90 backdrop-blur-md shadow-sm" : ""}`}>
-      <div className="container mx-auto px-4 py-3">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "py-4"}`}>
+      <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-xl font-bold text-customGreen-500">
-            Portfolio
+          <a href="#home" className="text-xl font-bold relative group">
+            <span className="text-customGreen-500 tracking-tight">Portfolio</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customGreen-500 transition-all group-hover:w-full"></span>
           </a>
           
           {/* Desktop Navigation */}
@@ -38,9 +57,14 @@ const Navbar = () => {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="font-medium text-gray-600 hover:text-customGreen-500 transition-colors link-underline"
+                  className={`relative font-medium text-gray-600 hover:text-customGreen-500 transition-colors ${
+                    activeSection === link.href.substring(1) ? "text-customGreen-500" : ""
+                  }`}
                 >
                   {link.name}
+                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-customGreen-500 transition-all duration-300 ${
+                    activeSection === link.href.substring(1) ? "w-full" : ""
+                  }`}></span>
                 </a>
               </li>
             ))}
@@ -50,33 +74,49 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden relative z-20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
           >
-            {isMenuOpen ? <X /> : <Menu />}
+            <div className="relative w-6 h-6">
+              <span className={`absolute block w-6 h-0.5 bg-gray-800 transform transition-transform duration-300 ${
+                isMenuOpen ? "rotate-45 top-3" : "top-1.5"
+              }`}></span>
+              <span className={`absolute block w-6 h-0.5 bg-gray-800 top-3 transition-opacity duration-300 ${
+                isMenuOpen ? "opacity-0" : "opacity-100"
+              }`}></span>
+              <span className={`absolute block w-6 h-0.5 bg-gray-800 transform transition-transform duration-300 ${
+                isMenuOpen ? "-rotate-45 top-3" : "top-4.5"
+              }`}></span>
+            </div>
           </Button>
         </div>
       </div>
       
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white bg-opacity-95 backdrop-blur-sm">
-          <ul className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+      <div className={`md:hidden fixed inset-0 bg-white z-10 transform transition-transform duration-300 ${
+        isMenuOpen ? "translate-x-0" : "translate-x-full"
+      }`}>
+        <div className="h-full flex flex-col justify-center items-center">
+          <ul className="flex flex-col space-y-6 text-center">
             {navLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.name} className="relative">
                 <a
                   href={link.href}
-                  className="block font-medium text-gray-600 hover:text-customGreen-500 transition-colors"
+                  className="block text-2xl font-medium text-gray-800 hover:text-customGreen-500 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
+                <span className="block h-0.5 w-0 bg-customGreen-500 mx-auto mt-1 transition-all duration-300 group-hover:w-full"></span>
               </li>
             ))}
           </ul>
+          <div className="absolute bottom-10 text-gray-500">
+            <p className="text-sm">© 2025 Portfolio</p>
+          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

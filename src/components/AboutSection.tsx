@@ -1,7 +1,8 @@
 
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Zap, Code, Settings, Globe, Database, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 const AboutSection = () => {
   const skills = [
@@ -15,9 +16,28 @@ const AboutSection = () => {
     "Bubble",
   ];
 
+  const tools = [
+    {name: "GlideApp", icon: <Globe className="h-4 w-4" />},
+    {name: "Lovable AI", icon: <Zap className="h-4 w-4" />},
+    {name: "Bubble", icon: <Code className="h-4 w-4" />},
+    {name: "Firebase Studio", icon: <Database className="h-4 w-4" />},
+    {name: "Webscraper.io", icon: <Globe className="h-4 w-4" />},
+    {name: "N8N", icon: <Settings className="h-4 w-4" />},
+    {name: "Make.com", icon: <Settings className="h-4 w-4" />},
+    {name: "GitHub", icon: <Code className="h-4 w-4" />},
+    {name: "Google Sheets", icon: <Database className="h-4 w-4" />},
+    {name: "Telegram API", icon: <Globe className="h-4 w-4" />},
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-customGreen-100 rounded-full opacity-20 blur-2xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-customGreen-100 rounded-full opacity-20 blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <div className="lg:w-2/5">
             <div className="relative">
@@ -25,28 +45,49 @@ const AboutSection = () => {
               <div className="relative bg-white shadow-lg rounded-xl overflow-hidden">
                 <div className="bg-customGreen-500 h-3"></div>
                 <div className="p-6">
-                  <div className="flex gap-4 mb-6">
-                    <div className="w-16 h-16 bg-customGreen-100 rounded-full flex items-center justify-center text-customGreen-500 font-bold text-xl">
-                      AI
+                  {/* Development workflow visualization */}
+                  <h4 className="text-sm font-medium text-gray-500 mb-3">My Development Workflow</h4>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-customGreen-100 flex items-center justify-center text-customGreen-500">1</div>
+                      <div className="h-0.5 w-6 bg-customGreen-200"></div>
+                      <div className="flex-1 p-3 border border-customGreen-200 rounded-lg">
+                        <h5 className="text-sm font-medium">Problem Analysis & Prompt Crafting</h5>
+                      </div>
                     </div>
-                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 font-bold text-xl">
-                      UX
+                    
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-customGreen-100 flex items-center justify-center text-customGreen-500">2</div>
+                      <div className="h-0.5 w-6 bg-customGreen-200"></div>
+                      <div className="flex-1 p-3 border border-customGreen-200 rounded-lg">
+                        <h5 className="text-sm font-medium">Solution Design with AI Tools</h5>
+                      </div>
                     </div>
-                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 font-bold text-xl">
-                      Dev
+                    
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-customGreen-100 flex items-center justify-center text-customGreen-500">3</div>
+                      <div className="h-0.5 w-6 bg-customGreen-200"></div>
+                      <div className="flex-1 p-3 border border-customGreen-200 rounded-lg">
+                        <h5 className="text-sm font-medium">No-Code Implementation</h5>
+                      </div>
                     </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-4 bg-gray-100 rounded-full w-full"></div>
-                    <div className="h-4 bg-gray-100 rounded-full w-5/6"></div>
-                    <div className="h-4 bg-gray-100 rounded-full w-4/6"></div>
-                    <div className="h-4 bg-customGreen-100 rounded-full w-full"></div>
-                  </div>
-                  <div className="mt-6 grid grid-cols-2 gap-3">
-                    <div className="h-8 bg-customGreen-500 rounded"></div>
-                    <div className="h-8 bg-customGreen-200 rounded"></div>
-                    <div className="h-8 bg-gray-200 rounded"></div>
-                    <div className="h-8 bg-gray-200 rounded"></div>
+                    
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-customGreen-100 flex items-center justify-center text-customGreen-500">4</div>
+                      <div className="h-0.5 w-6 bg-customGreen-200"></div>
+                      <div className="flex-1 p-3 border border-customGreen-200 rounded-lg">
+                        <h5 className="text-sm font-medium">Integration & Automation Setup</h5>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-customGreen-100 flex items-center justify-center text-customGreen-500">5</div>
+                      <div className="h-0.5 w-6 bg-customGreen-200"></div>
+                      <div className="flex-1 p-3 border border-customGreen-200 rounded-lg">
+                        <h5 className="text-sm font-medium">Testing & Deployment</h5>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -54,36 +95,65 @@ const AboutSection = () => {
           </div>
 
           <div className="lg:w-3/5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+            <div className="inline-block mb-2 px-3 py-1 bg-customGreen-50 text-customGreen-600 text-sm font-medium rounded-full">About Me</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">From Prompt to Product</h2>
             <h3 className="text-xl md:text-2xl font-medium text-customGreen-500 mb-6">
               My Journey from AI Experimentation to Building Real-World Solutions
             </h3>
             <p className="text-gray-600 mb-6">
-              I began as a curious explorer in the world of AI tools and no-code platforms, 
-              fascinated by their potential to democratize software development. What started as 
-              experimentation quickly evolved into a passion for building sophisticated digital 
-              solutions without traditional coding.
+              I design smart web solutions using powerful prompts, no-code platforms, and full-stack workflows. 
+              My goal is to craft flawless UI/UX without writing a line of code — just with the power of prompt engineering
+              and cutting-edge tools.
             </p>
             <p className="text-gray-600 mb-8">
-              Today, I specialize in leveraging AI-powered tools, n8n, Make (Integromat), Bubble, 
+              Today, I specialize in leveraging AI-powered tools, n8n, Make (Integromat), Bubble, Firebase, 
               and other visual development platforms to create responsive, modern, and interactive 
               websites and applications that deliver exceptional user experiences.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-              {skills.map((skill, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center bg-white p-3 rounded-lg shadow-sm"
-                >
-                  <Check className="h-4 w-4 text-customGreen-500 mr-2" />
-                  <span className="text-sm">{skill}</span>
-                </div>
-              ))}
+            <div className="mb-8">
+              <h4 className="text-lg font-medium mb-4 flex items-center">
+                <span>Skills & Expertise</span>
+                <span className="ml-3 h-px bg-gray-200 flex-1"></span>
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                {skills.map((skill, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow group hover:border-l-2 hover:border-customGreen-500"
+                  >
+                    <Check className="h-4 w-4 text-customGreen-500 mr-2 group-hover:scale-110 transition-transform" />
+                    <span className="text-sm">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="mb-8">
+              <h4 className="text-lg font-medium mb-4 flex items-center">
+                <span>Tech Stack & Tools</span>
+                <span className="ml-3 h-px bg-gray-200 flex-1"></span>
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {tools.map((tool, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white py-1.5 px-3 rounded-full shadow-sm hover:shadow-md transition-all hover:bg-customGreen-50 cursor-pointer flex items-center gap-2 border border-gray-100"
+                  >
+                    {tool.icon}
+                    <span className="text-sm">{tool.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <Button asChild className="bg-customGreen-500 hover:bg-customGreen-600">
-              <a href="#services">View My Services</a>
+            <Separator className="my-8" />
+
+            <Button asChild className="bg-customGreen-500 hover:bg-customGreen-600 flex items-center group">
+              <a href="#services">
+                View My Services
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>

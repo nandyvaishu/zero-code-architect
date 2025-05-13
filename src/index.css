@@ -16,7 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142 49% 48%;
+    /* Updated to match #2ECC71 */
+    --primary: 142 68% 49%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -25,15 +26,16 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 142 49% 94%;
-    --accent-foreground: 142 49% 28%;
+    /* Updated accent colors */
+    --accent: 142 68% 95%;
+    --accent-foreground: 142 68% 29%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 49% 48%;
+    --ring: 142 68% 49%;
 
     --radius: 0.5rem;
     
@@ -57,7 +59,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 49% 48%;
+    --primary: 142 68% 49%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -66,7 +68,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 142 49% 28%;
+    --accent: 142 68% 28%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -74,7 +76,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 142 49% 40%;
+    --ring: 142 68% 40%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -127,7 +129,7 @@
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-customGreen-500 after:transition-all after:duration-300 hover:after:w-full;
   }
   
-  /* New utility classes for enhanced UI */
+  /* Enhanced utility classes for UI */
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -145,7 +147,7 @@
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(75,181,67,0.5)];
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(46,204,113,0.5)];
   }
   
   .animated-border::after {
@@ -161,5 +163,44 @@
   
   .animated-border:hover::after {
     width: 100%;
+  }
+  
+  /* Section dividers */
+  .section-divider {
+    @apply relative py-16;
+  }
+  
+  .section-divider::before {
+    content: '';
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-customGreen-500 rounded-full;
+  }
+  
+  /* Enhanced card styles */
+  .modern-card {
+    @apply bg-white border-none shadow-md hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden relative;
+  }
+  
+  .modern-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-customGreen-500 transform origin-left scale-x-0 transition-transform duration-300;
+  }
+  
+  .modern-card:hover::before {
+    @apply scale-x-100;
+  }
+  
+  /* Button effects */
+  .button-hover-slide {
+    @apply relative overflow-hidden;
+  }
+  
+  .button-hover-slide::after {
+    content: '';
+    @apply absolute inset-0 bg-customGreen-600 transform scale-x-0 origin-left transition-transform duration-300;
+    z-index: -1;
+  }
+  
+  .button-hover-slide:hover::after {
+    @apply scale-x-100;
   }
 }

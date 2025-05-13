@@ -3,6 +3,7 @@ import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 import { ArrowRight } from "lucide-react";
+import { TooltipProvider } from "@/components/ui/tooltip"; 
 
 interface ServiceCardProps {
   title: string;
@@ -34,30 +35,32 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
       <CardContent className="relative z-10">
         <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{description}</p>
         
-        <HoverCard>
-          <HoverCardTrigger asChild>
-            <div className="mt-6 inline-block overflow-hidden relative">
-              <span className="text-sm text-customGreen-600 flex items-center gap-1 group-hover:translate-x-0 transform -translate-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer">
-                Learn more
-                <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-              </span>
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-customGreen-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-            </div>
-          </HoverCardTrigger>
-          <HoverCardContent className="w-80 backdrop-blur-sm bg-white/90 border border-customGreen-100 shadow-lg shadow-customGreen-50/30">
-            <div className="space-y-2">
-              <h4 className="text-sm font-semibold text-customGreen-700">{title}</h4>
-              <p className="text-sm text-gray-600">
-                {description} This service is tailored to meet your specific business needs using cutting-edge prompt engineering and no-code solutions.
-              </p>
-              <div className="pt-2 flex justify-end">
-                <span className="text-xs text-customGreen-500 flex items-center">
-                  Get started <ArrowRight className="ml-1 h-3 w-3" />
+        <TooltipProvider>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <div className="mt-6 inline-block overflow-hidden relative">
+                <span className="text-sm text-customGreen-600 flex items-center gap-1 group-hover:translate-x-0 transform -translate-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer">
+                  Learn more
+                  <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                 </span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-customGreen-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               </div>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 backdrop-blur-sm bg-white/90 border border-customGreen-100 shadow-lg shadow-customGreen-50/30">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-customGreen-700">{title}</h4>
+                <p className="text-sm text-gray-600">
+                  {description} This service is tailored to meet your specific business needs using cutting-edge prompt engineering and no-code solutions.
+                </p>
+                <div className="pt-2 flex justify-end">
+                  <span className="text-xs text-customGreen-500 flex items-center">
+                    Get started <ArrowRight className="ml-1 h-3 w-3" />
+                  </span>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        </TooltipProvider>
       </CardContent>
     </Card>
   );

@@ -23,23 +23,14 @@ const HeroSection = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance relative z-10">
                 Building the Future with <span className="text-gradient relative inline-block">
                   Prompts,
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,5 Q50,0 100,5 T200,5" stroke="#004466" strokeWidth="2" fill="none" />
-                  </svg>
                 </span> 
                 <br className="md:hidden"/>
                 <span className="relative inline-block">
                   No-Code, 
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,5 Q50,0 100,5 T200,5" stroke="#004466" strokeWidth="2" fill="none" />
-                  </svg>
                 </span>
                 <br className="md:hidden"/> and
                 <span className="relative inline-block ml-2">
                   Smart Automation
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,5 Q50,0 100,5 T200,5" stroke="#004466" strokeWidth="2" fill="none" />
-                  </svg>
                 </span>
               </h1>
             </div>

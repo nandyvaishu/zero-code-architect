@@ -64,12 +64,7 @@ const ProjectsSection = () => {
           <div className="inline-block relative">
             <div className="absolute -top-10 -right-10 text-6xl text-customBlue-100 font-bold opacity-30">{projects.length}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 relative z-10">
-              Recent <span className="relative">
-                Projects
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0,5 Q50,0 100,5 T200,5" stroke="#004466" strokeWidth="2" fill="none" />
-                </svg>
-              </span>
+              Recent Projects
             </h2>
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -121,7 +116,6 @@ const ProjectsSection = () => {
               More projects coming soon
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-500 transition-all group-hover:w-full"></span>
           </div>
         </div>
       </div>

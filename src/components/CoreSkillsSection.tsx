@@ -56,9 +56,8 @@ const CoreSkillsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 text-customBlue-600 text-sm font-medium rounded-full">Foundational Projects</div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Core Web Skills
-            <div className="absolute -bottom-2 left-0 w-full h-1 bg-customBlue-100"></div>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             I've built over 10+ mini-projects on CodePen using HTML, CSS, JavaScript, and Bootstrap during my learning phase. 
@@ -95,9 +94,8 @@ const CoreSkillsSection = () => {
                   </div>
                 </div>
                 <CardHeader className="py-3 px-4">
-                  <h3 className="text-base font-medium group-hover:text-customBlue-600 transition-colors relative inline-block">
+                  <h3 className="text-base font-medium group-hover:text-customBlue-600 transition-colors inline-block">
                     {project.title}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-500 transition-all duration-300 group-hover:w-full"></span>
                   </h3>
                 </CardHeader>
                 <CardContent className="py-0 px-4 pb-4">

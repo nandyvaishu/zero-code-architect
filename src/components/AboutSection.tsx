@@ -111,7 +111,7 @@ const AboutSection = () => {
             </h3>
             <p className="text-gray-600 mb-6">
               I design smart web solutions using powerful prompts, no-code platforms, and full-stack workflows. 
-              My goal is to craft flawless UI/UX without writing a line of code — just with the power of prompt engineering
+              My goal is to craft flawless UI/UX without writing a single line of code — just with the power of prompt engineering
               and cutting-edge tools.
             </p>
             <p className="text-gray-600 mb-8">

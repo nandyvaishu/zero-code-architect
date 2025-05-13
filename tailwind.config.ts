@@ -53,18 +53,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
-        // Custom color palette - adjusted to match #2ECC71
-        customGreen: {
-          50: "#edfcf4",
-          100: "#d3f9e5",
-          200: "#aaefca",
-          300: "#73e0a9",
-          400: "#46ce8a",
-          500: "#2ECC71", // Main accent green
-          600: "#1ca056",
-          700: "#1a7f48",
-          800: "#186439",
-          900: "#155231",
+        // New professional color palette - replaced green with charcoal gray
+        customBlue: {
+          50: "#e6f1f5",
+          100: "#cce3ec",
+          200: "#99c7d8",
+          300: "#66abc5",
+          400: "#338fb1",
+          500: "#004466", // Main accent blue
+          600: "#003a57",
+          700: "#002f47",
+          800: "#002538",
+          900: "#001a28",
+        },
+        charcoal: {
+          50: "#f5f5f5",
+          100: "#e6e6e6",
+          200: "#cccccc",
+          300: "#b3b3b3",
+          400: "#999999",
+          500: "#3A3A3C", // Main accent charcoal
+          600: "#333333",
+          700: "#292929",
+          800: "#1f1f1f",
+          900: "#151515",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

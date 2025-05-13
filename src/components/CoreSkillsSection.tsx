@@ -1,0 +1,127 @@
+
+import React from "react";
+import { Code, Globe, Database, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+interface CodepenProject {
+  title: string;
+  description: string;
+  thumbnail: string;
+  url: string;
+  tags: string[];
+}
+
+const CoreSkillsSection = () => {
+  const codepenProjects: CodepenProject[] = [
+    {
+      title: "Responsive Dashboard",
+      description: "A responsive admin dashboard built with HTML, CSS, and JavaScript",
+      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "https://codepen.io",
+      tags: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      title: "Interactive Form",
+      description: "Form with client-side validation using vanilla JavaScript",
+      thumbnail: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "https://codepen.io",
+      tags: ["HTML", "CSS", "JavaScript", "Validation"]
+    },
+    {
+      title: "Bootstrap Landing Page",
+      description: "A professionally designed landing page using Bootstrap components",
+      thumbnail: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "https://codepen.io",
+      tags: ["HTML", "CSS", "Bootstrap"]
+    },
+    {
+      title: "DOM Manipulation App",
+      description: "A task management app demonstrating DOM manipulation techniques",
+      thumbnail: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+      url: "https://codepen.io",
+      tags: ["HTML", "CSS", "JavaScript", "DOM"]
+    }
+  ];
+
+  return (
+    <section id="core-skills" className="py-20 relative bg-gray-50">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-customBlue-100 rounded-full opacity-20 blur-2xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-customBlue-100 rounded-full opacity-20 blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 text-customBlue-600 text-sm font-medium rounded-full">Foundational Projects</div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Web Skills</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            I've built over 10+ mini-projects on CodePen using HTML, CSS, JavaScript, and Bootstrap during my learning phase. 
+            These projects were focused on UI/UX, responsiveness, and DOM-based interactivity. This foundational work ensures 
+            I don't rely solely on no-code tools — I understand the fundamentals deeply.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {codepenProjects.map((project, index) => (
+            <a 
+              href={project.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              key={index}
+              className="group block"
+            >
+              <Card className="h-full border-none shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative h-40 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                  <img 
+                    src={project.thumbnail} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute bottom-2 left-2 right-2 z-20">
+                    <div className="flex flex-wrap gap-1 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      {project.tags.map((tag, i) => (
+                        <Badge key={i} variant="outline" className="bg-white/90 text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <CardHeader className="py-3 px-4">
+                  <h3 className="text-base font-medium group-hover:text-customBlue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                </CardHeader>
+                <CardContent className="py-0 px-4 pb-4">
+                  <p className="text-xs text-gray-500">{project.description}</p>
+                </CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-500 italic">
+            These are not large-scale projects, but demonstrate strong front-end fundamentals.
+          </p>
+          
+          <div className="mt-6">
+            <Button asChild variant="outline" className="group hover:bg-customBlue-50 hover:text-customBlue-600 hover:border-customBlue-200">
+              <a href="https://codepen.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+                <Code className="mr-2 h-4 w-4" />
+                <span>View More on CodePen</span>
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CoreSkillsSection;

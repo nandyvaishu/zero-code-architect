@@ -9,12 +9,14 @@ const ProjectsSection = () => {
   
   const projects = [
     {
-      title: "AI-Powered E-commerce",
-      description: "A modern e-commerce platform built entirely with no-code tools and AI integrations for product recommendations.",
-      tags: ["Bubble", "AI", "UX/UI", "Automation"],
+      title: "AI-Powered Recipe Generator",
+      description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
+      tags: ["Bubble", "AI", "Make.com", "Automation"],
       image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80",
       link: "#",
-      category: "No-Code" as const
+      category: "No-Code" as const,
+      status: "In Progress" as const,
+      badge: "AI + Automation"
     },
     {
       title: "Workflow Automation Suite",
@@ -32,12 +34,13 @@ const ProjectsSection = () => {
       category: "AI-integrated" as const
     },
     {
-      title: "AI Content Generator",
-      description: "A tool that generates marketing content using advanced prompt engineering and AI models.",
-      tags: ["AI", "Prompting", "Content"],
+      title: "AI Agent",
+      description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
+      tags: ["AI", "NLP", "Make.com", "Bubble"],
       image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      link: "#",
-      category: "Prompt-built" as const
+      link: "",
+      category: "Prompt-built" as const,
+      status: "Coming Soon" as const
     },
   ];
 
@@ -51,20 +54,20 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 relative">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customGreen-50 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customGreen-50 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 relative">
-          <div className="inline-block mb-2 px-3 py-1 bg-customGreen-50 text-customGreen-600 text-sm font-medium rounded-full">My Work</div>
+          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 text-customBlue-600 text-sm font-medium rounded-full">My Work</div>
           <div className="inline-block relative">
-            <div className="absolute -top-10 -right-10 text-6xl text-customGreen-100 font-bold opacity-30">{projects.length}</div>
+            <div className="absolute -top-10 -right-10 text-6xl text-customBlue-100 font-bold opacity-30">{projects.length}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 relative z-10">
               Recent <span className="relative">
                 Projects
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0,5 Q50,0 100,5 T200,5" stroke="#2ECC71" strokeWidth="2" fill="none" />
+                  <path d="M0,5 Q50,0 100,5 T200,5" stroke="#004466" strokeWidth="2" fill="none" />
                 </svg>
               </span>
             </h2>
@@ -80,7 +83,7 @@ const ProjectsSection = () => {
               variant={activeFilter === null ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveFilter(null)}
-              className={activeFilter === null ? "bg-customGreen-500" : "hover:bg-customGreen-50"}
+              className={activeFilter === null ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 rounded-md"}
             >
               All Projects
             </Button>
@@ -91,7 +94,7 @@ const ProjectsSection = () => {
                 variant={activeFilter === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(category)}
-                className={activeFilter === category ? "bg-customGreen-500" : "hover:bg-customGreen-50"}
+                className={activeFilter === category ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 rounded-md"}
               >
                 {category}
               </Button>
@@ -114,11 +117,11 @@ const ProjectsSection = () => {
         {/* More projects indicator */}
         <div className="flex justify-center mt-12">
           <div className="relative group cursor-pointer">
-            <div className="text-customGreen-600 font-medium flex items-center">
+            <div className="text-customBlue-600 font-medium flex items-center">
               More projects coming soon
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customGreen-500 transition-all group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-500 transition-all group-hover:w-full"></span>
           </div>
         </div>
       </div>

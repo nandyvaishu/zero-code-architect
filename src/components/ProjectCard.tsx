@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
   title: string;
@@ -11,9 +12,11 @@ interface ProjectCardProps {
   image: string;
   link?: string;
   category?: "Prompt-built" | "No-Code" | "AI-integrated" | "API-connected";
+  status?: "In Progress" | "Completed" | "Coming Soon";
+  badge?: string;
 }
 
-const ProjectCard = ({ title, description, tags, image, link, category }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, image, link, category, status, badge }: ProjectCardProps) => {
   // Define category badges with colors
   const categoryColors = {
     "Prompt-built": "bg-purple-100 text-purple-700",
@@ -22,7 +25,14 @@ const ProjectCard = ({ title, description, tags, image, link, category }: Projec
     "API-connected": "bg-teal-100 text-teal-700"
   };
   
+  const statusColors = {
+    "In Progress": "bg-yellow-100 text-yellow-700 border-yellow-200",
+    "Completed": "bg-green-100 text-green-700 border-green-200",
+    "Coming Soon": "bg-gray-100 text-gray-700 border-gray-200"
+  };
+  
   const categoryColor = category ? categoryColors[category] : "bg-gray-100 text-gray-700";
+  const statusColor = status ? statusColors[status] : "";
   
   return (
     <Card className="overflow-hidden card-hover h-full border-none shadow-md group">
@@ -33,6 +43,24 @@ const ProjectCard = ({ title, description, tags, image, link, category }: Projec
             <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColor}`}>
               {category}
             </span>
+          </div>
+        )}
+        
+        {/* Status badge */}
+        {status && (
+          <div className="absolute top-3 right-3 z-20">
+            <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${statusColor}`}>
+              {status}
+            </span>
+          </div>
+        )}
+        
+        {/* Special badge/ribbon */}
+        {badge && (
+          <div className="absolute -right-12 top-5 rotate-45 z-30">
+            <div className="bg-customBlue-500 text-white text-xs py-1 px-10 font-bold shadow-md">
+              {badge}
+            </div>
           </div>
         )}
         
@@ -50,7 +78,7 @@ const ProjectCard = ({ title, description, tags, image, link, category }: Projec
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-white/90 backdrop-blur-sm text-customGreen-700 text-xs px-2 py-1 rounded-full"
+                className="bg-white/90 backdrop-blur-sm text-customBlue-700 text-xs px-2 py-1 rounded-full"
               >
                 {tag}
               </span>
@@ -60,9 +88,9 @@ const ProjectCard = ({ title, description, tags, image, link, category }: Projec
       </div>
       
       <CardHeader className="pb-0">
-        <h3 className="text-xl font-semibold group-hover:text-customGreen-600 transition-colors relative">
+        <h3 className="text-xl font-semibold group-hover:text-customBlue-600 transition-colors relative">
           {title}
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customGreen-500 transition-all duration-300 group-hover:w-1/3"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-500 transition-all duration-300 group-hover:w-1/3"></span>
         </h3>
       </CardHeader>
       
@@ -72,9 +100,9 @@ const ProjectCard = ({ title, description, tags, image, link, category }: Projec
       
       <CardFooter>
         {link ? (
-          <Button asChild variant="outline" className="w-full group hover:bg-customGreen-50 hover:text-customGreen-600 hover:border-customGreen-200">
+          <Button asChild variant="outline" className="w-full group hover:bg-customBlue-50 hover:text-customBlue-600 hover:border-customBlue-200">
             <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-              <span>View Project</span> 
+              <span>Preview Project</span> 
               <ExternalLink className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

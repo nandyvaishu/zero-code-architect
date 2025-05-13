@@ -7,17 +7,17 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%; /* #FAFAFA */
+    --foreground: 0 0% 13%; /* #222222 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 13%; /* #222222 */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 13%;
 
-    /* Updated to match #2ECC71 */
-    --primary: 142 68% 49%;
+    /* Updated to match #004466 */
+    --primary: 198 100% 20%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -27,15 +27,15 @@
     --muted-foreground: 215.4 16.3% 46.9%;
 
     /* Updated accent colors */
-    --accent: 142 68% 95%;
-    --accent-foreground: 142 68% 29%;
+    --accent: 198 100% 95%;
+    --accent-foreground: 198 100% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 68% 49%;
+    --ring: 198 100% 20%;
 
     --radius: 0.5rem;
     
@@ -59,7 +59,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 68% 49%;
+    /* Updated primary for dark mode */
+    --primary: 198 100% 30%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -68,7 +69,8 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 142 68% 28%;
+    /* Updated accent for dark mode */
+    --accent: 198 100% 28%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -76,7 +78,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 142 68% 40%;
+    --ring: 198 100% 40%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -100,7 +102,7 @@
     @apply bg-background text-foreground font-inter;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-semibold;
+    @apply font-poppins font-semibold text-[#222222];
   }
 }
 
@@ -122,11 +124,11 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-customGreen-600 to-customGreen-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-customBlue-600 to-customBlue-400 bg-clip-text text-transparent;
   }
   
   .link-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-customGreen-500 after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-customBlue-500 after:transition-all after:duration-300 hover:after:w-full;
   }
   
   /* Enhanced utility classes for UI */
@@ -147,7 +149,7 @@
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(46,204,113,0.5)];
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,70,102,0.5)];
   }
   
   .animated-border::after {
@@ -157,7 +159,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: theme('colors.customGreen.500');
+    background-color: theme('colors.customBlue.500');
     transition: width 0.3s ease;
   }
   
@@ -172,7 +174,7 @@
   
   .section-divider::before {
     content: '';
-    @apply absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-customGreen-500 rounded-full;
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-customBlue-500 rounded-full;
   }
   
   /* Enhanced card styles */
@@ -182,7 +184,7 @@
   
   .modern-card::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-1 bg-customGreen-500 transform origin-left scale-x-0 transition-transform duration-300;
+    @apply absolute top-0 left-0 w-full h-1 bg-customBlue-500 transform origin-left scale-x-0 transition-transform duration-300;
   }
   
   .modern-card:hover::before {
@@ -196,7 +198,7 @@
   
   .button-hover-slide::after {
     content: '';
-    @apply absolute inset-0 bg-customGreen-600 transform scale-x-0 origin-left transition-transform duration-300;
+    @apply absolute inset-0 bg-customBlue-600 transform scale-x-0 origin-left transition-transform duration-300;
     z-index: -1;
   }
   

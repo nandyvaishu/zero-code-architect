@@ -31,8 +31,17 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 bg-gray-50 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center opacity-5"
+        />
+      </div>
+      
       {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-customGreen-100 rounded-full opacity-20 blur-2xl"></div>
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-customGreen-100 rounded-full opacity-20 blur-3xl"></div>
       </div>

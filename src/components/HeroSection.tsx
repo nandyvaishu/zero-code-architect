@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 pb-12 overflow-hidden relative">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center opacity-5"
+        />
+      </div>
+
       {/* Background decorative elements - enhanced */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-customBlue-50 rounded-full opacity-60 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-12 -right-12 w-80 h-80 bg-customBlue-50 rounded-full opacity-60 blur-3xl"></div>

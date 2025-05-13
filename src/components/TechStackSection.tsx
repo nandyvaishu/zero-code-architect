@@ -55,8 +55,17 @@ const TechStackSection = () => {
 
   return (
     <section id="tech-stack" className="py-20 relative">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center opacity-5"
+        />
+      </div>
+
       {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
         <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
       </div>

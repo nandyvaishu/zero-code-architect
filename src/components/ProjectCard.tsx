@@ -88,9 +88,9 @@ const ProjectCard = ({ title, description, tags, image, link, category, status, 
       </div>
       
       <CardHeader className="pb-0">
-        <h3 className="text-xl font-semibold group-hover:text-customBlue-600 transition-colors relative">
+        <h3 className="text-xl font-semibold group-hover:text-customBlue-600 transition-colors relative inline-block">
           {title}
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-500 transition-all duration-300 group-hover:w-1/3"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-500 transition-all duration-300 group-hover:w-full"></span>
         </h3>
       </CardHeader>
       

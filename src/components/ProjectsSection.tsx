@@ -52,31 +52,31 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 relative">
-      {/* Background image with overlay */}
+      {/* Background image with overlay - more subtle */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-5"
+          className="w-full h-full object-cover object-center opacity-[0.02] dark:opacity-[0.03]"
         />
       </div>
       
-      {/* Decorative background elements */}
+      {/* Decorative background elements - more subtle */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customBlue-50 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customBlue-50 dark:bg-customBlue-900/20 rounded-full opacity-20 dark:opacity-10 blur-3xl"></div>
+        <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customBlue-50 dark:bg-customBlue-900/20 rounded-full opacity-20 dark:opacity-10 blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 relative">
-          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 text-customBlue-600 text-sm font-medium rounded-full">My Work</div>
+          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 dark:bg-customBlue-900/30 text-customBlue-600 dark:text-customBlue-300 text-sm font-medium rounded-full">My Work</div>
           <div className="inline-block relative">
-            <div className="absolute -top-10 -right-10 text-6xl text-customBlue-100 font-bold opacity-30">{projects.length}</div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 relative z-10">
+            <div className="absolute -top-10 -right-10 text-6xl text-customBlue-100 dark:text-customBlue-900/30 font-bold opacity-30">{projects.length}</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 relative z-10 dark:text-white">
               Recent Projects
             </h2>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Explore the solutions I've built using AI tools, no-code platforms, and 
             visual development environments.
           </p>
@@ -87,7 +87,7 @@ const ProjectsSection = () => {
               variant={activeFilter === null ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveFilter(null)}
-              className={activeFilter === null ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 rounded-md"}
+              className={activeFilter === null ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 dark:hover:bg-customBlue-900/30 rounded-md"}
             >
               All Projects
             </Button>
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                 variant={activeFilter === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(category)}
-                className={activeFilter === category ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 rounded-md"}
+                className={activeFilter === category ? "bg-customBlue-500 text-white rounded-md" : "hover:bg-customBlue-50 dark:hover:bg-customBlue-900/30 rounded-md"}
               >
                 {category}
               </Button>
@@ -121,7 +121,7 @@ const ProjectsSection = () => {
         {/* More projects indicator */}
         <div className="flex justify-center mt-12">
           <div className="relative group cursor-pointer">
-            <div className="text-customBlue-600 font-medium flex items-center">
+            <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center">
               More projects coming soon
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>

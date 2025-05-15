@@ -1,121 +1,103 @@
 
 import React from "react";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  tags: string[];
   image: string;
+  tags: string[];
   link?: string;
-  category?: "Prompt-built" | "No-Code" | "AI-integrated" | "API-connected";
+  category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
 }
 
-const ProjectCard = ({ title, description, tags, image, link, category, status, badge }: ProjectCardProps) => {
-  // Define category badges with colors
-  const categoryColors = {
-    "Prompt-built": "bg-purple-100 text-purple-700",
-    "No-Code": "bg-blue-100 text-blue-700",
-    "AI-integrated": "bg-orange-100 text-orange-700",
-    "API-connected": "bg-teal-100 text-teal-700"
+const ProjectCard = ({ title, description, image, tags, link, status, badge }: ProjectCardProps) => {
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
   };
-  
-  const statusColors = {
-    "In Progress": "bg-yellow-100 text-yellow-700 border-yellow-200",
-    "Completed": "bg-green-100 text-green-700 border-green-200",
-    "Coming Soon": "bg-gray-100 text-gray-700 border-gray-200"
-  };
-  
-  const categoryColor = category ? categoryColors[category] : "bg-gray-100 text-gray-700";
-  const statusColor = status ? statusColors[status] : "";
   
   return (
-    <Card className="overflow-hidden card-hover h-full border-none shadow-md group">
-      <div className="relative h-48 overflow-hidden">
-        {/* Category badge */}
-        {category && (
-          <div className="absolute top-3 left-3 z-20">
-            <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColor}`}>
-              {category}
-            </span>
-          </div>
-        )}
+    <Card className="overflow-hidden group h-full border-none shadow-md hover:shadow-lg transition-all dark:bg-gray-800/70">
+      {/* Image Container */}
+      <div className="relative">
+        <AspectRatio ratio={16 / 9} className="bg-muted overflow-hidden">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </AspectRatio>
         
-        {/* Status badge */}
+        {/* Status Badge */}
         {status && (
-          <div className="absolute top-3 right-3 z-20">
-            <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${statusColor}`}>
+          <div className="absolute top-3 right-3">
+            <Badge 
+              variant="outline" 
+              className={`
+                ${status === "In Progress" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/70 dark:text-yellow-300" : ""} 
+                ${status === "Completed" ? "bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300" : ""} 
+                ${status === "Coming Soon" ? "bg-purple-100 text-purple-700 dark:bg-purple-900/70 dark:text-purple-300" : ""}
+                text-xs py-1 font-medium shadow-sm dark:border-white/10 backdrop-blur-sm
+              `}
+            >
               {status}
-            </span>
+            </Badge>
           </div>
         )}
-        
-        {/* Special badge/ribbon */}
-        {badge && (
-          <div className="absolute -right-12 top-5 rotate-45 z-30">
-            <div className="bg-customBlue-500 text-white text-xs py-1 px-10 font-bold shadow-md">
-              {badge}
-            </div>
-          </div>
-        )}
-        
-        {/* Image overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
-        
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-        />
-        
-        <div className="absolute bottom-0 left-0 w-full p-3 z-10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="bg-white/90 backdrop-blur-sm text-customBlue-700 text-xs px-2 py-1 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
       
-      <CardHeader className="pb-0">
-        <h3 className="text-xl font-semibold group-hover:text-customBlue-600 transition-colors inline-block">
-          {title}
-        </h3>
-      </CardHeader>
-      
-      <CardContent>
-        <p className="text-sm text-gray-600 mb-4">{description}</p>
-      </CardContent>
-      
-      <CardFooter>
-        {link ? (
-          <Button asChild variant="outline" className="w-full group hover:bg-customBlue-50 hover:text-customBlue-600 hover:border-customBlue-200">
-            <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-              <span>Preview Project</span> 
-              <ExternalLink className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        ) : (
-          <Button disabled variant="outline" className="w-full cursor-not-allowed">
-            <span className="mr-2">Coming Soon</span>
-            <div className="flex space-x-1">
-              <div className="w-1 h-1 rounded-full bg-gray-400 animate-pulse"></div>
-              <div className="w-1 h-1 rounded-full bg-gray-400 animate-pulse" style={{animationDelay: '0.2s'}}></div>
-              <div className="w-1 h-1 rounded-full bg-gray-400 animate-pulse" style={{animationDelay: '0.4s'}}></div>
-            </div>
-          </Button>
+      {/* Content */}
+      <div className="p-5">
+        {/* Special Badge */}
+        {badge && (
+          <div className="mb-3">
+            <Badge className="bg-customBlue-100 hover:bg-customBlue-200 text-customBlue-700 dark:bg-customBlue-900/50 dark:text-customBlue-300 dark:hover:bg-customBlue-800/70">
+              {badge}
+            </Badge>
+          </div>
         )}
-      </CardFooter>
+        
+        {/* Title */}
+        <h3 className="text-xl font-semibold mb-2 dark:text-white">
+          {link ? (
+            <a 
+              href={link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group-hover:text-customBlue-600 dark:group-hover:text-customBlue-400 transition-colors flex items-center gap-1"
+            >
+              {title}
+              <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          ) : (
+            <span>{title}</span>
+          )}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          {truncateText(description, 150)}
+        </p>
+        
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 pt-2">
+          {tags.map((tag, i) => (
+            <Badge 
+              key={i} 
+              variant="secondary" 
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-xs"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </div>
     </Card>
   );
 };

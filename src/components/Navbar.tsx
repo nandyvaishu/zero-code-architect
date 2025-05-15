@@ -1,35 +1,20 @@
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Handle scroll event to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      
-      // Update active section based on scroll position
-      const sections = ["home", "about", "projects", "services", "contact"];
-      const scrollPosition = window.scrollY + 100;
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const height = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -37,87 +22,84 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Skills", href: "#tech-stack" },
     { name: "Projects", href: "#projects" },
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "py-4"}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <a href="#home" className="text-xl font-bold relative group">
-            <span className="text-customGreen-500 tracking-tight">Portfolio</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customGreen-500 transition-all group-hover:w-full"></span>
-          </a>
-          
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className={`relative font-medium text-gray-600 hover:text-customGreen-500 transition-colors ${
-                    activeSection === link.href.substring(1) ? "text-customGreen-500" : ""
-                  }`}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-customGreen-500 transition-all duration-300 ${
-                    activeSection === link.href.substring(1) ? "w-full" : ""
-                  }`}></span>
-                </a>
-              </li>
-            ))}
-          </ul>
-          
-          {/* Mobile Navigation Trigger */}
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300",
+        isScrolled 
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm py-4"
+          : "bg-transparent py-6"
+      )}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#home" className="text-customBlue-500 font-bold text-xl">
+          <span className="text-gray-900 dark:text-white">Portfolio</span>
+          <span className="text-customBlue-500">.dev</span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-1">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={cn(
+                "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                "text-gray-700 hover:text-customBlue-500 dark:text-gray-300 dark:hover:text-white",
+                "relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-customBlue-500",
+                "hover:after:w-full after:transition-all after:duration-300"
+              )}
+            >
+              {link.name}
+            </a>
+          ))}
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="flex items-center md:hidden">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden relative z-20"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu"
+            className="ml-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className="relative w-6 h-6">
-              <span className={`absolute block w-6 h-0.5 bg-gray-800 transform transition-transform duration-300 ${
-                isMenuOpen ? "rotate-45 top-3" : "top-1.5"
-              }`}></span>
-              <span className={`absolute block w-6 h-0.5 bg-gray-800 top-3 transition-opacity duration-300 ${
-                isMenuOpen ? "opacity-0" : "opacity-100"
-              }`}></span>
-              <span className={`absolute block w-6 h-0.5 bg-gray-800 transform transition-transform duration-300 ${
-                isMenuOpen ? "-rotate-45 top-3" : "top-4.5"
-              }`}></span>
-            </div>
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
       </div>
-      
-      {/* Mobile Navigation Menu */}
-      <div className={`md:hidden fixed inset-0 bg-white z-10 transform transition-transform duration-300 ${
-        isMenuOpen ? "translate-x-0" : "translate-x-full"
-      }`}>
-        <div className="h-full flex flex-col justify-center items-center">
-          <ul className="flex flex-col space-y-6 text-center">
-            {navLinks.map((link) => (
-              <li key={link.name} className="relative">
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
+          <div className="container mx-auto px-4 py-3">
+            <nav className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
                 <a
+                  key={link.name}
                   href={link.href}
-                  className="block text-2xl font-medium text-gray-800 hover:text-customGreen-500 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-customBlue-500 dark:hover:text-white text-sm font-medium"
                 >
                   {link.name}
                 </a>
-                <span className="block h-0.5 w-0 bg-customGreen-500 mx-auto mt-1 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            ))}
-          </ul>
-          <div className="absolute bottom-10 text-gray-500">
-            <p className="text-sm">© 2025 Portfolio</p>
+              ))}
+            </nav>
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 };
 

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { AlertCircle, Code, Globe, Lightbulb, Puzzle, Settings } from "lucide-react";
 import ServiceCard from "./ServiceCard";
@@ -37,20 +38,20 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50 relative">
-      {/* Background image with overlay */}
+    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900 relative">
+      {/* Background image with overlay - more subtle */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-5"
+          className="w-full h-full object-cover object-center opacity-[0.02] dark:opacity-[0.03]"
         />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">My Services</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Specialized services designed to bring your digital ideas to life without traditional coding.
           </p>
         </div>
@@ -67,16 +68,16 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 p-6 md:p-8 bg-white rounded-xl shadow-md text-center animate-fade-in">
+        <div className="mt-16 p-6 md:p-8 bg-white dark:bg-gray-800 rounded-xl shadow-md text-center animate-fade-in dark:text-white">
           <h3 className="text-xl md:text-2xl font-semibold mb-4">Coming Soon: Digital Products</h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
             I'm working on a collection of digital products including prompt templates, UI kits, 
             and no-code modules to help you accelerate your own projects.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <div className="bg-gray-100 rounded-lg px-4 py-2 text-gray-600">Prompt Templates</div>
-            <div className="bg-gray-100 rounded-lg px-4 py-2 text-gray-600">UI Component Kits</div>
-            <div className="bg-gray-100 rounded-lg px-4 py-2 text-gray-600">No-Code Modules</div>
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">Prompt Templates</div>
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">UI Component Kits</div>
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">No-Code Modules</div>
           </div>
         </div>
       </div>

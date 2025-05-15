@@ -13,7 +13,7 @@ import TechStackSection from "@/components/TechStackSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
       <HeroSection />
       <AboutSection />

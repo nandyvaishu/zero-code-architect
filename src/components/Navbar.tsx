@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#home" className="text-customBlue-500 font-bold text-xl">
           <span className="text-gray-900 dark:text-white">Portfolio</span>
-          <span className="text-customBlue-500">.dev</span>
+          <span className="text-customBlue-500 dark:text-customBlue-400">.dev</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -74,7 +74,7 @@ const Navbar = () => {
             className="ml-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-6 w-6 dark:text-gray-300" />
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>

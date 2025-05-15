@@ -5,12 +5,14 @@ import './index.css'
 
 // Apply the theme from localStorage or system preference
 const applyTheme = () => {
-  const theme = localStorage.getItem('theme') || 'light';
+  const theme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
   if (theme === 'dark' || (!theme && prefersDark)) {
     document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
   } else {
+    document.documentElement.classList.add('light');
     document.documentElement.classList.remove('dark');
   }
 };

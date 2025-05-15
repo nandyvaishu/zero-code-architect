@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,19 +63,19 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 relative">
-      {/* Background image with overlay */}
+      {/* Background image with overlay - more visible */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-5"
+          className="w-full h-full object-cover object-center opacity-10 dark:opacity-15"
         />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have a project in mind or want to learn more about my services? 
             Fill out the form below and I'll get back to you as soon as possible.
           </p>
@@ -82,10 +83,10 @@ const ContactSection = () => {
 
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 animate-scale-in">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <div className="hover-lift">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Your Name
                   </label>
                   <Input
@@ -96,10 +97,11 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting || isSubmitted}
+                    className="dark:bg-gray-800 dark:text-white dark:border-gray-600"
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <div className="hover-lift">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                     Email Address
                   </label>
                   <Input
@@ -110,12 +112,13 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting || isSubmitted}
+                    className="dark:bg-gray-800 dark:text-white dark:border-gray-600"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+              <div className="hover-lift">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Subject
                 </label>
                 <Input
@@ -126,11 +129,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting || isSubmitted}
+                  className="dark:bg-gray-800 dark:text-white dark:border-gray-600"
                 />
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <div className="hover-lift">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Your Message
                 </label>
                 <Textarea
@@ -141,12 +145,13 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting || isSubmitted}
+                  className="dark:bg-gray-800 dark:text-white dark:border-gray-600"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-customGreen-500 hover:bg-customGreen-600"
+                className="w-full bg-customGreen-500 hover:bg-customGreen-600 dark:bg-customGreen-600 dark:hover:bg-customGreen-700 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
                 disabled={isSubmitting || isSubmitted}
               >
                 {isSubmitting ? (
@@ -155,15 +160,15 @@ const ContactSection = () => {
                   <span>Message Sent</span>
                 ) : (
                   <span className="flex items-center justify-center">
-                    Send Message <Send className="ml-2 h-4 w-4" />
+                    Send Message <Send className="ml-2 h-4 w-4 animate-bounce" />
                   </span>
                 )}
               </Button>
             </form>
 
             {isSubmitted && (
-              <div className="mt-6 p-4 bg-customGreen-50 rounded-lg text-center animate-fade-in">
-                <p className="text-customGreen-700">
+              <div className="mt-6 p-4 bg-customGreen-50 dark:bg-customGreen-900/30 rounded-lg text-center animate-fade-in">
+                <p className="text-customGreen-700 dark:text-customGreen-300">
                   Thank you for your message! I'll get back to you as soon as possible.
                 </p>
               </div>
@@ -171,35 +176,35 @@ const ContactSection = () => {
           </div>
 
           <div className="lg:w-1/3">
-            <div className="bg-white p-6 rounded-lg shadow-md h-full">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md h-full transform hover:scale-[1.02] transition-all duration-300 animate-scale-in">
+              <h3 className="text-xl font-semibold mb-6 dark:text-white">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="bg-customGreen-50 p-2 rounded mr-4 text-customGreen-500">
+                  <div key={index} className="flex items-start hover-lift group transition-all duration-300">
+                    <div className="bg-customGreen-50 dark:bg-customGreen-900/30 p-2 rounded mr-4 text-customGreen-500 dark:text-customGreen-300 group-hover:bg-customGreen-100 dark:group-hover:bg-customGreen-800/50 transition-colors">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="text-sm text-gray-500">{item.title}</h4>
-                      <p className="font-medium">{item.value}</p>
+                      <h4 className="text-sm text-gray-500 dark:text-gray-400">{item.title}</h4>
+                      <p className="font-medium dark:text-gray-200">{item.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
+                <h3 className="text-lg font-semibold mb-4 dark:text-white">Office Hours</h3>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday:</span>
+                  <li className="flex justify-between dark:text-gray-300">
+                    <span className="text-gray-600 dark:text-gray-400">Monday - Friday:</span>
                     <span>9:00 AM - 6:00 PM</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-600">Saturday:</span>
+                  <li className="flex justify-between dark:text-gray-300">
+                    <span className="text-gray-600 dark:text-gray-400">Saturday:</span>
                     <span>By appointment</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-600">Sunday:</span>
+                  <li className="flex justify-between dark:text-gray-300">
+                    <span className="text-gray-600 dark:text-gray-400">Sunday:</span>
                     <span>Closed</span>
                   </li>
                 </ul>

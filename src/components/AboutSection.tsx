@@ -44,7 +44,8 @@ const AboutSection = () => {
               Prompt Engineer & No-Code Builder
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              I specialize in crafting digital solutions using the power of prompts and no-code tools. My passion lies in transforming complex ideas into functional, user-friendly applications.
+              Though I have a strong foundation in traditional coding, I firmly believe that today’s technology enables me to deliver superior results through prompt engineering.
+              By iterating and refining my prompts, I create unique and improved UI/UX experiences. When necessary, I rely on my coding skills to fine-tune and fix any challenges that arise, blending both worlds for the best outcomes.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

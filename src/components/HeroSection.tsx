@@ -24,7 +24,7 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-1/2">
             <div className="flex items-center mb-3">
-              <span className="bg-customBlue-100 dark:bg-customBlue-900/50 text-customBlue-600 dark:text-customBlue-300 text-xs font-medium px-3 py-1 rounded-full">Prompt Engineer & No-Code Builder</span>
+              <span className="bg-customBlue-100 dark:bg-customBlue-900/50 text-customBlue-600 dark:text-customBlue-300 text-xs font-medium px-3 py-1 rounded-full">Prompt Engineer/Automation Engineer & No-Code Builder</span>
             </div>
             
             <div className="relative">

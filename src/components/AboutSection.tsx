@@ -1,16 +1,17 @@
+
 import React from "react";
 import { Rocket, Code, Wand2, GraduationCap, BookOpenCheck } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative bg-white dark:bg-gray-900">
       {/* Background image with overlay - more subtle */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1505628346824-60b2903929aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-[0.02] dark:opacity-[0.03]"
+          className="w-full h-full object-cover object-center opacity-[0.04] dark:opacity-[0.06]"
         />
       </div>
       
@@ -23,11 +24,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="md:order-2">
-            <div className="relative">
+            <div className="relative max-w-sm mx-auto">
               <img
-                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                 alt="About me"
-                className="rounded-xl shadow-lg hover-glow"
+                className="rounded-xl shadow-lg hover-glow w-full h-auto"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-customBlue-500 rounded-full shadow-md hover-lift transform hover:rotate-6 transition-transform duration-300">
                 <Rocket className="text-white h-12 w-12 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />

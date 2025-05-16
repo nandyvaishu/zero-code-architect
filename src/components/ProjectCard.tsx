@@ -22,16 +22,27 @@ const ProjectCard = ({ title, description, image, tags, link, status, badge }: P
   };
   
   return (
-    <Card className="overflow-hidden group h-full border-none shadow-md hover:shadow-lg transition-all dark:bg-gray-800/70">
+    <Card className="overflow-hidden group h-full border-none shadow-md hover:shadow-lg transition-all dark:bg-gray-800/70 hover:-translate-y-1 duration-300">
       {/* Image Container */}
       <div className="relative">
         <AspectRatio ratio={16 / 9} className="bg-muted overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
+          {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <img 
+                src={image} 
+                alt={title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </a>
+          ) : (
+            <img 
+              src={image} 
+              alt={title} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          )}
         </AspectRatio>
         
         {/* Status Badge */}

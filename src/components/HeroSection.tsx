@@ -9,9 +9,9 @@ const HeroSection = () => {
       {/* Background image with overlay - more subtle */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-[0.03] dark:opacity-[0.04]"
+          className="w-full h-full object-cover object-center opacity-[0.05] dark:opacity-[0.07]"
         />
       </div>
 
@@ -50,7 +50,7 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-customBlue-500 hover:bg-customBlue-600 dark:bg-customBlue-600 dark:hover:bg-customBlue-700 relative overflow-hidden group rounded-md">
+              <Button asChild size="lg" className="bg-customBlue-500 hover:bg-customBlue-600 dark:bg-customBlue-600 dark:hover:bg-customBlue-700 relative overflow-hidden group rounded-md animate-bounce-slow">
                 <a href="#projects">
                   <span className="relative z-10 flex items-center">
                     Explore My Projects <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

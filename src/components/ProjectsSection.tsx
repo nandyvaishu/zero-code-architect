@@ -13,7 +13,7 @@ const ProjectsSection = () => {
       description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
       tags: ["Bubble", "AI", "Make.com", "Automation"],
       image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80",
-      link: "#",
+      link: "https://project-link-1.com",
       category: "No-Code" as const,
       status: "In Progress" as const,
       badge: "AI + Automation"
@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       description: "Custom workflow automation solution created with n8n and Make integrating multiple business systems.",
       tags: ["n8n", "Make", "Automation", "Integration"],
       image: "https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      link: "#",
+      link: "https://project-link-2.com",
       category: "API-connected" as const
     },
     {
@@ -31,6 +31,7 @@ const ProjectsSection = () => {
       description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      link: "https://project-link-3.com",
       category: "AI-integrated" as const
     },
     {
@@ -38,7 +39,7 @@ const ProjectsSection = () => {
       description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
       image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      link: "",
+      link: "https://project-link-4.com",
       category: "Prompt-built" as const,
       status: "Coming Soon" as const
     },
@@ -57,7 +58,7 @@ const ProjectsSection = () => {
         <img 
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-[0.03] dark:opacity-[0.05]"
+          className="w-full h-full object-cover object-center opacity-[0.04] dark:opacity-[0.06]"
         />
       </div>
       
@@ -82,7 +83,7 @@ const ProjectsSection = () => {
           </p>
           
           {/* Category filter */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <div className="flex flex-wrap justify-center gap-3 mt-8 stagger-children">
             <Button 
               variant={activeFilter === null ? "default" : "outline"}
               size="sm"
@@ -106,7 +107,7 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
           {filteredProjects.map((project, index) => (
             <div 
               key={index} 

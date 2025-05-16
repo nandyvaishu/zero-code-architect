@@ -22,16 +22,20 @@ applyTheme();
 
 // Setup reveal animations when scrolling
 const setupRevealAnimations = () => {
-  const revealElements = document.querySelectorAll('section');
+  const revealElements = document.querySelectorAll('section, .reveal-element');
   
   const reveal = () => {
+    const windowHeight = window.innerHeight;
+    
     revealElements.forEach((element) => {
-      const windowHeight = window.innerHeight;
       const elementTop = element.getBoundingClientRect().top;
       const elementVisible = 150;
       
       if (elementTop < windowHeight - elementVisible) {
         element.classList.add('active');
+      } else {
+        // Optional: remove active class if you want elements to animate again when scrolling back up
+        // element.classList.remove('active');
       }
     });
   };
@@ -42,12 +46,14 @@ const setupRevealAnimations = () => {
   });
   
   // Initial check on load
-  window.addEventListener('DOMContentLoaded', reveal);
+  window.addEventListener('load', reveal);
   // Check on scroll
   window.addEventListener('scroll', reveal);
+  // Check on resize
+  window.addEventListener('resize', reveal);
 };
 
 // Initialize animations on DOM load
-window.addEventListener('DOMContentLoaded', setupRevealAnimations);
+document.addEventListener('DOMContentLoaded', setupRevealAnimations);
 
 createRoot(document.getElementById("root")!).render(<App />);

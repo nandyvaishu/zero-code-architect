@@ -1,97 +1,117 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-interface ProjectProps {
+interface ProjectCardProps {
   title: string;
   description: string;
-  tags: string[];
   image: string;
+  tags: string[];
   link?: string;
   category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({
-  title,
-  description,
-  tags,
-  image,
-  link,
-  status,
-  badge,
-}) => {
+const ProjectCard = ({ title, description, image, tags, link, status, badge }: ProjectCardProps) => {
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
+  };
+  
   return (
-    <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
-      {/* Image container with consistent aspect ratio */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        {/* Status badge positioned on the image */}
+    <Card className="overflow-hidden group h-full border-none shadow-md hover:shadow-lg transition-all dark:bg-gray-800/70 hover:-translate-y-1 duration-300">
+      {/* Image Container */}
+      <div className="relative">
+        <AspectRatio ratio={16 / 9} className="bg-muted">
+          {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+              <img 
+                src={image} 
+                alt={title} 
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </a>
+          ) : (
+            <div className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+              <img 
+                src={image} 
+                alt={title} 
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          )}
+        </AspectRatio>
+        
+        {/* Status Badge */}
         {status && (
-          <div className={`absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-full 
-            ${status === "In Progress" ? "bg-amber-500/90 text-white" : 
-              status === "Completed" ? "bg-green-500/90 text-white" : 
-              "bg-gray-500/90 text-white"}`}>
-            {status}
+          <div className="absolute top-3 right-3">
+            <Badge 
+              variant="outline" 
+              className={`
+                ${status === "In Progress" ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/70 dark:text-yellow-300" : ""} 
+                ${status === "Completed" ? "bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300" : ""} 
+                ${status === "Coming Soon" ? "bg-purple-100 text-purple-700 dark:bg-purple-900/70 dark:text-purple-300" : ""}
+                text-xs py-1 font-medium shadow-sm dark:border-white/10 backdrop-blur-sm
+              `}
+            >
+              {status}
+            </Badge>
           </div>
         )}
       </div>
-
-      {/* Card content */}
-      <div className="p-5 flex flex-col h-[calc(100%-9rem)]">
+      
+      {/* Content */}
+      <div className="p-5">
+        {/* Special Badge */}
+        {badge && (
+          <div className="mb-3">
+            <Badge className="bg-customBlue-100 hover:bg-customBlue-200 text-customBlue-700 dark:bg-customBlue-900/50 dark:text-customBlue-300 dark:hover:bg-customBlue-800/70">
+              {badge}
+            </Badge>
+          </div>
+        )}
+        
+        {/* Title */}
+        <h3 className="text-xl font-semibold mb-2 dark:text-white">
+          {link ? (
+            <a 
+              href={link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group-hover:text-customBlue-600 dark:group-hover:text-customBlue-400 transition-colors flex items-center gap-1"
+            >
+              {title}
+              <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          ) : (
+            <span>{title}</span>
+          )}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          {truncateText(description, 150)}
+        </p>
+        
         {/* Tags */}
-        <div className="mb-3 flex flex-wrap gap-1.5">
-          {tags.map((tag, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              className="text-xs font-medium px-2 py-0.5 bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 border-gray-200 dark:border-gray-700"
+        <div className="flex flex-wrap gap-2 pt-2">
+          {tags.map((tag, i) => (
+            <Badge 
+              key={i} 
+              variant="secondary" 
+              className="bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 text-xs"
             >
               {tag}
             </Badge>
           ))}
-          {badge && (
-            <Badge
-              variant="default"
-              className="text-xs font-medium px-2 py-0.5 bg-customBlue-500 text-white"
-            >
-              {badge}
-            </Badge>
-          )}
         </div>
-
-        {/* Title */}
-        <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-customBlue-600 dark:group-hover:text-customBlue-400 transition-colors">
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-          {description}
-        </p>
-
-        {/* Link button */}
-        {link && (
-          <div className="mt-auto pt-2 flex items-center">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-medium text-customBlue-600 dark:text-customBlue-400 hover:text-customBlue-800 dark:hover:text-customBlue-300 transition-colors"
-            >
-              View Project
-              <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        )}
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -37,11 +37,11 @@ const CoreSkillsSection = () => {
       tags: ["HTML", "CSS", "Javascript"]
     },
     {
-      title: "DOM Manipulation App",
-      description: "A task management app demonstrating DOM manipulation techniques",
-      thumbnail: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-      url: "https://codepen.io",
-      tags: ["HTML", "CSS", "JavaScript", "DOM"]
+      title: "Superhero App",
+      description: "A superhero app built with HTML, CSS, and JavaScript that lets users search or discover random heroes using the SuperHero API. Showcases skills in API integration, Fetch API, and DOM manipulation.",
+      thumbnail: "https://i.ibb.co/3yDSkCyR/IMG-20250518-082408.jpg",
+      url: "https://codepen.io/Nandy7390/pen/YzJevxv",
+      tags: ["HTML", "CSS", "JavaScript", "DOM","API"]
     }
   ];
 

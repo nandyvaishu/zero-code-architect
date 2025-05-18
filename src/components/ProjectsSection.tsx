@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -12,8 +11,8 @@ const ProjectsSection = () => {
       title: "AI-Powered Recipe Generator",
       description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
       tags: ["Bubble", "AI", "Make.com", "Automation"],
-      image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80",
-      link: "https://project-link-1.com",
+      image: "https://i.ibb.co/4wqRfLGc/IMG-20250518-100632.jpg",
+      link: "https://nandhini7390.github.io/Farm-fresh/",
       category: "No-Code" as const,
       status: "In Progress" as const,
       badge: "AI + Automation"
@@ -30,15 +29,15 @@ const ProjectsSection = () => {
       title: "Interactive Dashboard",
       description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      link: "https://project-link-3.com",
+      image: "https://i.ibb.co/MD1D3NqN/IMG-20250518-113858.jpg",
+      link: "https://nandhini7390.github.io/superecom/",
       category: "AI-integrated" as const
     },
     {
       title: "AI Agent",
       description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: "https://i.ibb.co/8gn9snPs/IMG-20250518-114318.jpg",
       link: "https://project-link-4.com",
       category: "Prompt-built" as const,
       status: "Coming Soon" as const

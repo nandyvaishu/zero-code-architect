@@ -25,23 +25,25 @@ const ProjectCard = ({ title, description, image, tags, link, status, badge }: P
     <Card className="overflow-hidden group h-full border-none shadow-md hover:shadow-lg transition-all dark:bg-gray-800/70 hover:-translate-y-1 duration-300">
       {/* Image Container */}
       <div className="relative">
-        <AspectRatio ratio={16 / 9} className="bg-muted overflow-hidden">
+        <AspectRatio ratio={16 / 9} className="bg-muted">
           {link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a href={link} target="_blank" rel="noopener noreferrer" className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
               <img 
                 src={image} 
                 alt={title} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </a>
           ) : (
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
+            <div className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+              <img 
+                src={image} 
+                alt={title} 
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           )}
         </AspectRatio>
         

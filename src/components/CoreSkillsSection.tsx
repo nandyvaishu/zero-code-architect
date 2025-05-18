@@ -20,7 +20,7 @@ const CoreSkillsSection = () => {
         "An interactive, audio-enhanced 1v1 fighting game built with HTML, CSS, and JavaScript, featuring animated characters and power meters.",
       thumbnail: "https://i.ibb.co/cKvXsyXN/image.png",
       url: "https://codepen.io/Nandy7390/pen/zxxXdOm",
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["HTML", "CSS", "JavaScript","DOM"],
     },
     {
       title: "Netflix Clone",
@@ -36,7 +36,7 @@ const CoreSkillsSection = () => {
         "A responsive Rock-Paper-Scissors game with sound effects, real-time score tracking, and dynamic bot responses using JavaScript.",
       thumbnail: "https://i.ibb.co/4Z3wjCX1/IMG-20250518-075101.jpg",
       url: "https://codepen.io/Nandy7390/pen/jOeyVKO",
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["HTML", "CSS", "JavaScript","DOM"],
     },
     {
       title: "Superhero App",

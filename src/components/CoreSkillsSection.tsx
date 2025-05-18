@@ -17,7 +17,7 @@ const CoreSkillsSection = () => {
   const codepenProjects: CodepenProject[] = [
     {
       title: "Street Fighter",
-      description: "A responsive street fighter game built with HTML, CSS, and JavaScript",
+      description: "An interactive, audio-enhanced 1v1 fighting game built with HTML, CSS, and JavaScript, featuring animated characters and power meters.",
       thumbnail: "https://i.ibb.co/cKvXsyXN/image.png",
       url: "https://codepen.io/Nandy7390/pen/zxxXdOm",
       tags: ["HTML", "CSS", "JavaScript"]

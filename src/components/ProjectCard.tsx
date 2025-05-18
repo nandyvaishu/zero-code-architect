@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 
 interface ProjectProps {
   title: string;
@@ -23,39 +24,34 @@ const ProjectCard: React.FC<ProjectProps> = ({
   badge,
 }) => {
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full dark:bg-gray-800/70 hover:-translate-y-1">
-      {/* Image wrapper */}
-      <div className="relative aspect-[4/3] bg-white dark:bg-gray-900 p-2">
-        {link ? (
-          <a 
-            href={link} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block w-full h-full"
-          >
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
-            />
-          </a>
-        ) : (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
-          />
+    <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
+      {/* Image container with consistent aspect ratio */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Status badge positioned on the image */}
+        {status && (
+          <div className={`absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-full 
+            ${status === "In Progress" ? "bg-amber-500/90 text-white" : 
+              status === "Completed" ? "bg-green-500/90 text-white" : 
+              "bg-gray-500/90 text-white"}`}>
+            {status}
+          </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="p-4 flex flex-col flex-1">
-        <div className="mb-2 flex flex-wrap gap-2">
+      {/* Card content */}
+      <div className="p-5 flex flex-col h-[calc(100%-9rem)]">
+        {/* Tags */}
+        <div className="mb-3 flex flex-wrap gap-1.5">
           {tags.map((tag, index) => (
             <Badge
               key={index}
               variant="outline"
-              className="text-xs dark:bg-gray-900/90 bg-white/90 dark:text-white"
+              className="text-xs font-medium px-2 py-0.5 bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 border-gray-200 dark:border-gray-700"
             >
               {tag}
             </Badge>
@@ -63,35 +59,36 @@ const ProjectCard: React.FC<ProjectProps> = ({
           {badge && (
             <Badge
               variant="default"
-              className="bg-customBlue-500 text-white text-xs"
+              className="text-xs font-medium px-2 py-0.5 bg-customBlue-500 text-white"
             >
               {badge}
             </Badge>
           )}
         </div>
 
-        <h3 className="text-lg font-semibold mb-2 dark:text-white">
-          {link ? (
-            <a 
-              href={link} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-customBlue-500 transition-colors"
-            >
-              {title}
-            </a>
-          ) : (
-            title
-          )}
+        {/* Title */}
+        <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-customBlue-600 dark:group-hover:text-customBlue-400 transition-colors">
+          {title}
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 flex-1">
+
+        {/* Description */}
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
           {description}
         </p>
 
-        {status && (
-          <p className="mt-3 text-xs text-gray-400 italic">
-            Status: {status}
-          </p>
+        {/* Link button */}
+        {link && (
+          <div className="mt-auto pt-2 flex items-center">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-customBlue-600 dark:text-customBlue-400 hover:text-customBlue-800 dark:hover:text-customBlue-300 transition-colors"
+            >
+              View Project
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         )}
       </div>
     </div>

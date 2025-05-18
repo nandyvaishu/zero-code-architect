@@ -27,20 +27,20 @@ const ProjectCard = ({ title, description, image, tags, link, status, badge }: P
       <div className="relative">
         <AspectRatio ratio={16 / 9} className="bg-muted">
           {link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="h-full w-full">
+            <a href={link} target="_blank" rel="noopener noreferrer" className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
               <img 
                 src={image} 
                 alt={title} 
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </a>
           ) : (
-            <div className="h-full w-full">
+            <div className="h-full w-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
               <img 
                 src={image} 
                 alt={title} 
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>

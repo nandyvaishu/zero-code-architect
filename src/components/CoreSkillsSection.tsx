@@ -23,11 +23,11 @@ const CoreSkillsSection = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      title: "Interactive Form",
-      description: "Form with client-side validation using vanilla JavaScript",
-      thumbnail: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      url: "https://codepen.io",
-      tags: ["HTML", "CSS", "JavaScript", "Validation"]
+      title: "Netflix Clone",
+      description: "A responsive Netflix Originals UI clone that dynamically displays movies using the TMDB API with interactive hover effects.",
+      thumbnail: "https://i.ibb.co/whm0Hp0h/IMG-20250518-074311.jpg",
+      url: "https://codepen.io/Nandy7390/pen/azzxwgP?editors=1000",
+      tags: ["HTML", "CSS", "JavaScript","API Integration"]
     },
     {
       title: "Bootstrap Landing Page",

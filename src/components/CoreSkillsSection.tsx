@@ -31,7 +31,7 @@ const CoreSkillsSection = () => {
     },
     {
       title: "Rock Paper and Scissors",
-      description: "A popular game Rock,Paper and Scissors created online using  html,css and js",
+      description: "A responsive Rock-Paper-Scissors game with sound effects, real-time score tracking, and dynamic bot responses using JavaScript",
       thumbnail: "https://i.ibb.co/4Z3wjCX1/IMG-20250518-075101.jpg",
       url: "https://codepen.io/Nandy7390/pen/jOeyVKO",
       tags: ["HTML", "CSS", "Javascript"]

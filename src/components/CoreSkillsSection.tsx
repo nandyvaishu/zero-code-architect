@@ -16,10 +16,10 @@ interface CodepenProject {
 const CoreSkillsSection = () => {
   const codepenProjects: CodepenProject[] = [
     {
-      title: "Responsive Dashboard",
-      description: "A responsive admin dashboard built with HTML, CSS, and JavaScript",
+      title: "Street Fighter",
+      description: "A responsive street fighter game built with HTML, CSS, and JavaScript",
       thumbnail: "https://i.ibb.co/cKvXsyXN/image.png",
-      url: "https://codepen.io",
+      url: "https://codepen.io/Nandy7390/pen/zxxXdOm",
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {

@@ -30,11 +30,11 @@ const CoreSkillsSection = () => {
       tags: ["HTML", "CSS", "JavaScript","API Integration"]
     },
     {
-      title: "Bootstrap Landing Page",
-      description: "A professionally designed landing page using Bootstrap components",
-      thumbnail: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      url: "https://codepen.io",
-      tags: ["HTML", "CSS", "Bootstrap"]
+      title: "Rock Paper and Scissors",
+      description: "A popular game Rock,Paper and Scissors created online using  html,css and js",
+      thumbnail: "https://i.ibb.co/4Z3wjCX1/IMG-20250518-075101.jpg",
+      url: "https://codepen.io/Nandy7390/pen/jOeyVKO",
+      tags: ["HTML", "CSS", "Javascript"]
     },
     {
       title: "DOM Manipulation App",

@@ -18,7 +18,7 @@ const CoreSkillsSection = () => {
     {
       title: "Responsive Dashboard",
       description: "A responsive admin dashboard built with HTML, CSS, and JavaScript",
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      thumbnail: "https://i.ibb.co/cKvXsyXN/image.png",
       url: "https://codepen.io",
       tags: ["HTML", "CSS", "JavaScript"]
     },

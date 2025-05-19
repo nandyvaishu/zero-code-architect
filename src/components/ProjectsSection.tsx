@@ -108,13 +108,16 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
           {filteredProjects.map((project, index) => (
-            <div 
+             <a
               key={index} 
-              className="animate-fade-in" 
+              href={project.link} // Use the project link as the href
+              target="_blank" // Open link in new tab (optional)
+              rel="noopener noreferrer" // Security best practice
+              className="animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <ProjectCard {...project} />
-            </div>
+             </a>
           ))}
         </div>
         

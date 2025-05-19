@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       title: "Farm to Frontend ",
       description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
       tags: ["Bubble", "AI", "Make.com", "Automation"],
-      image: "https://i.ibb.co/mFdB04tZ/IMG-20250519-094544.jpg",
+      image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
       category: "No-Code" as const,
       status: "In Progress" as const,
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       title: "Remodified Ecom",
       description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
-      image: "https://i.ibb.co/rKypxSC7/Screenshot-2025-05-19-09-40-35-99-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
+      image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",
       category: "AI-integrated" as const
     },
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       title: "Cricket Fantasy App",
       description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
-      image: "https://i.ibb.co/TD4Wrwt5/IMG-20250519-100155.jpg",
+      image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
       category: "Prompt-built" as const,
       status: "Coming Soon" as const

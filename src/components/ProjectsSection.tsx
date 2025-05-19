@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       title: "Farm to Frontend ",
       description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
       tags: ["Bubble", "AI", "Make.com", "Automation"],
-      image: "https://i.ibb.co/4wqRfLGc/IMG-20250518-100632.jpg",
+      image: "https://i.ibb.co/mFdB04tZ/IMG-20250519-094544.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
       category: "No-Code" as const,
       status: "In Progress" as const,

@@ -19,34 +19,13 @@ const ProjectCard: React.FC<ProjectProps> = ({
   title,
   description,
   tags,
-  image,
   link,
-  status,
   badge,
-  imageClassName,
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
-      {/* Image container with consistent aspect ratio */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ${imageClassName || ""}`}
-        />
-        {/* Status badge positioned on the image */}
-        {status && (
-          <div className={`absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-full 
-            ${status === "In Progress" ? "bg-amber-500/90 text-white" : 
-              status === "Completed" ? "bg-green-500/90 text-white" : 
-              "bg-gray-500/90 text-white"}`}>
-            {status}
-          </div>
-        )}
-      </div>
-
       {/* Card content */}
-      <div className="p-5 flex flex-col h-[calc(100%-9rem)]">
+      <div className="p-5 flex flex-col h-full">
         {/* Tags */}
         <div className="mb-3 flex flex-wrap gap-1.5">
           {tags.map((tag, index) => (

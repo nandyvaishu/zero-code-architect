@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       title: "AI Agent",
       description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
-      image: "https://i.ibb.co/8gn9snPs/IMG-20250518-114318.jpg",
+      image: "https://i.ibb.co/TD4Wrwt5/IMG-20250519-100155.jpg",
       link: "https://project-link-4.com",
       category: "Prompt-built" as const,
       status: "Coming Soon" as const

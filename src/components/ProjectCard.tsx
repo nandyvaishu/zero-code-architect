@@ -27,13 +27,13 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
-      {/* Image container with consistent aspect ratio and padding */}
-      <div className="relative w-full aspect-video bg-gray-50 dark:bg-gray-900/40 p-3">
+      {/* Image container with padding */}
+      <div className="relative w-full bg-gray-50 dark:bg-gray-900/40 p-3">
         <div className="w-full h-full flex items-center justify-center">
           <img
             src={image}
             alt={title}
-            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 ${imageClassName || ""}`}
+            className={`w-full h-auto object-contain transition-transform duration-500 group-hover:scale-102 ${imageClassName || ""}`}
           />
         </div>
         {/* Status badge positioned on the image */}
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
       </div>
 
       {/* Card content */}
-      <div className="p-5 flex flex-col h-[calc(100%-9rem)]">
+      <div className="p-5 flex flex-col h-[calc(100%-9rem)]"> {/* Note: This height calculation might need adjustment as image height is now dynamic */}
         {/* Tags */}
         <div className="mb-3 flex flex-wrap gap-1.5">
           {tags.map((tag, index) => (

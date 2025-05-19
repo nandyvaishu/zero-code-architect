@@ -27,13 +27,15 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
-      {/* Image container with consistent aspect ratio */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ${imageClassName || ""}`}
-        />
+      {/* Image container with consistent aspect ratio and padding */}
+      <div className="relative w-full aspect-video bg-gray-50 dark:bg-gray-900/40 p-3">
+        <div className="w-full h-full flex items-center justify-center">
+          <img
+            src={image}
+            alt={title}
+            className={`max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-102 ${imageClassName || ""}`}
+          />
+        </div>
         {/* Status badge positioned on the image */}
         {status && (
           <div className={`absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-full 

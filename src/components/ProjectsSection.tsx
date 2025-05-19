@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       title: "Interactive Dashboard",
       description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
-      image: "https://i.ibb.co/MD1D3NqN/IMG-20250518-113858.jpg",
+      image: "https://i.ibb.co/rKypxSC7/Screenshot-2025-05-19-09-40-35-99-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
       link: "https://nandhini7390.github.io/superecom/",
       category: "AI-integrated" as const
     },

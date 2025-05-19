@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           <img
             src={image}
             alt={title}
-            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 ${imageClassName || ""}`}
+            className={`max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-102 ${imageClassName || ""}`}
           />
         </div>
         {/* Status badge positioned on the image */}

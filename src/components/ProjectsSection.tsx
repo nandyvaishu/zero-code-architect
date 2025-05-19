@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -114,7 +113,7 @@ const ProjectsSection = () => {
               className="animate-fade-in" 
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <ProjectCard {...project} imageClassName="object-cover object-center" />
+              <ProjectCard {...project} />
             </div>
           ))}
         </div>

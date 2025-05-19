@@ -12,6 +12,7 @@ interface ProjectProps {
   category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
+  imageClassName?: string;
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({
@@ -22,6 +23,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   link,
   status,
   badge,
+  imageClassName,
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
@@ -30,7 +32,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName || ""}`}
         />
         {/* Status badge positioned on the image */}
         {status && (

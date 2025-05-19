@@ -18,7 +18,7 @@ const CoreSkillsSection = () => {
       title: "Street Fighter",
       description:
         "An interactive, audio-enhanced 1v1 fighting game built with HTML, CSS, and JavaScript, featuring animated characters and power meters.",
-      thumbnail: "https://i.ibb.co/cKvXsyXN/image.png",
+      thumbnail: "https://i.ibb.co/nN529nch/In-Shot-20250519-201158060.jpg",
       url: "https://codepen.io/Nandy7390/pen/zxxXdOm",
       tags: ["HTML", "CSS", "JavaScript","DOM"],
     },
@@ -26,7 +26,7 @@ const CoreSkillsSection = () => {
       title: "Netflix Clone",
       description:
         "A responsive Netflix Originals UI clone that dynamically displays movies using the TMDB API with interactive hover effects.",
-      thumbnail: "https://i.ibb.co/whm0Hp0h/IMG-20250518-074311.jpg",
+      thumbnail: "https://i.ibb.co/CRhK4PK/In-Shot-20250519-200442266.jpg",
       url: "https://codepen.io/Nandy7390/pen/azzxwgP?editors=1000",
       tags: ["HTML", "CSS", "JavaScript", "API Integration"],
     },
@@ -35,14 +35,14 @@ const CoreSkillsSection = () => {
       description:
         "A responsive Rock-Paper-Scissors game with sound effects, real-time score tracking, and dynamic bot responses using JavaScript.",
       thumbnail: "https://i.ibb.co/4Z3wjCX1/IMG-20250518-075101.jpg",
-      url: "https://codepen.io/Nandy7390/pen/jOeyVKO",
+      url: "https://i.ibb.co/yn4TfPY7/In-Shot-20250519-200618171.jpg",
       tags: ["HTML", "CSS", "JavaScript","DOM"],
     },
     {
       title: "Superhero App",
       description:
         "A superhero app built with HTML, CSS, and JavaScript that lets users search or discover random heroes using the SuperHero API. Showcases skills in API integration, Fetch API, and DOM manipulation.",
-      thumbnail: "https://i.ibb.co/3yDSkCyR/IMG-20250518-082408.jpg",
+      thumbnail: "https://i.ibb.co/HL6FJt5n/In-Shot-20250519-200656295.jpg",
       url: "https://codepen.io/Nandy7390/pen/YzJevxv",
       tags: ["HTML", "CSS", "JavaScript", "DOM", "API"],
     },

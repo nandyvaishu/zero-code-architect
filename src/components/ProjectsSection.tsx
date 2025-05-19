@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       category: "API-connected" as const
     },
     {
-      title: "Interactive Dashboard",
+      title: "Remodified Ecom",
       description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
       image: "https://i.ibb.co/rKypxSC7/Screenshot-2025-05-19-09-40-35-99-40deb401b9ffe8e1df2f1cc5ba480b12.jpg",
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
       description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
       image: "https://i.ibb.co/TD4Wrwt5/IMG-20250519-100155.jpg",
-      link: "https://project-link-4.com",
+      link: "https://cricket-fantasy-flare.vercel.app/",
       category: "Prompt-built" as const,
       status: "Coming Soon" as const
     },

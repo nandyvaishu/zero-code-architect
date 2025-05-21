@@ -75,8 +75,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
           {title}
         </h3>
 
-        {/* Description */}
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+        {/* Description - removed line-clamp-3 class to show full description */}
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
           {description}
         </p>
 

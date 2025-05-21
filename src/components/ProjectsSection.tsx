@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Cricket Fantasy App",
-      description: "This project will involve building an intelligent AI assistant capable of handling user queries using NLP. It will integrate with Bubble.io, Make.com, and possibly messaging platforms to demonstrate smart automation.",
+      description: "Built a full-featured fantasy cricket app using LovableAI with sign-in, Google login, live match data via CricAPI, league creation, and wallet modules. Also integrated a mock AI chatbot for interactive user experience.",
       tags: ["AI", "NLP", "Make.com", "Bubble"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",

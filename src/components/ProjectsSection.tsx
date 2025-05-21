@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Farm to Frontend ",
-      description: "Built using Bubble.io, this app takes user food preferences and generates AI-powered recipes with a grocery list. The list is sent to WhatsApp using Make.com and includes a link to order ingredients via Amazon Fresh. A smart AI + Automation use case.",
+      description: "A sleek, fully functional food website crafted with zero manual coding—just smart prompts. Features a responsive design, interactive shop, blog, and contact form, all built using HTML, CSS, and JavaScript",
       tags: ["Bubble", "AI", "Make.com", "Automation"],
       image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
@@ -18,16 +18,16 @@ const ProjectsSection = () => {
       badge: "AI + Automation"
     },
     {
-      title: "Workflow Automation Suite",
-      description: "Custom workflow automation solution created with n8n and Make integrating multiple business systems.",
+      title: "Job Scraper Automation Suite",
+      description: "Built a job scraper workflow in n8n by arranging modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, Iterate, and Telegram. It automates daily job fetching, info extraction, and Telegram alerts—fully configured through visual node setup.",
       tags: ["n8n", "Make", "Automation", "Integration"],
-      image: "https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      link: "https://project-link-2.com",
+      image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
+      link: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
       category: "API-connected" as const
     },
     {
       title: "Remodified Ecom",
-      description: "A dynamic dashboard for data visualization built with no-code tools and real-time data processing.",
+      description: "This project demonstrates my expertise in redesigning an outdated CodePen site using HTML, CSS, JavaScript, and Bootstrap. It reflects my ability to transform legacy websites into modern, user-centric platforms with enhanced UI and UX.",
       tags: ["Visual Dev", "Dashboard", "Data", "Design"],
       image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",

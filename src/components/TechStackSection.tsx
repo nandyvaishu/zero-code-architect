@@ -34,7 +34,7 @@ const TechStackSection = () => {
     {
       category: "No-Code Tools",
       icon: <Zap className="h-5 w-5 text-customBlue-500" />,
-      skills: ["Bubble.io", "GlideApp"]
+      skills: ["Bubble.io", "GlideApp", "Lovable AI", "Bolt.new"]
     },
     {
       category: "Automation",
@@ -44,12 +44,12 @@ const TechStackSection = () => {
     {
       category: "Deployment",
       icon: <Globe className="h-5 w-5 text-customBlue-500" />,
-      skills: ["Vercel", "GitHub Pages"]
+      skills: ["Vercel", "GitHub Pages", "Render", "Railway"]
     },
     {
       category: "Dev Tools",
       icon: <Terminal className="h-5 w-5 text-customBlue-500" />,
-      skills: ["Replit", "Visual Studio Code", "CodePen"]
+      skills: ["Replit", "Visual Studio Code", "CodePen", "Stackblitz", "CodeSandbox"]
     }
   ];
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,6 @@ const ProjectsSection = () => {
       image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
       category: "No-Code" as const,
-      status: "In Progress" as const,
       badge: "AI + Automation"
     },
     {
@@ -40,8 +38,7 @@ const ProjectsSection = () => {
       tags: ["AI", "NLP", "Make.com", "Bubble"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
-      category: "Prompt-built" as const,
-      status: "Coming Soon" as const
+      category: "Prompt-built" as const
     },
   ];
 

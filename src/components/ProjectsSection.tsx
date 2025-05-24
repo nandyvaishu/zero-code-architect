@@ -10,7 +10,7 @@ const ProjectsSection = () => {
     {
       title: "Farm to Frontend ",
       description: "A sleek, fully functional food website crafted with zero manual coding—just smart prompts. Features a responsive design, interactive shop, blog, and contact form, all built using HTML, CSS, and JavaScript",
-      tags: ["Bubble", "AI", "Make.com", "Automation"],
+      tags: ["HTML", "CSS", "JavaScript", "Prompt"],
       image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
       category: "No-Code" as const,
@@ -19,7 +19,7 @@ const ProjectsSection = () => {
     {
       title: "Job Scraper Automation Suite",
       description: "Built a job scraper workflow in n8n by arranging modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, Iterate, and Telegram. It automates daily job fetching, info extraction, and Telegram alerts—fully configured through visual node setup.",
-      tags: ["n8n", "Make", "Automation", "Integration"],
+      tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       link: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
       category: "API-connected" as const
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
     {
       title: "Remodified Ecom",
       description: "This project demonstrates my expertise in redesigning an outdated CodePen site using HTML, CSS, JavaScript, and Bootstrap. It reflects my ability to transform legacy websites into modern, user-centric platforms with enhanced UI and UX.",
-      tags: ["Visual Dev", "Dashboard", "Data", "Design"],
+      tags: ["HTML", "CSS", "JS", "Bootstrap", "Prompts"],
       image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",
       category: "AI-integrated" as const
@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     {
       title: "Cricket Fantasy App",
       description: "Built a full-featured fantasy cricket app using LovableAI with sign-in, Google login, live match data via CricAPI, league creation, and wallet modules. Also integrated a mock AI chatbot for interactive user experience.",
-      tags: ["AI", "NLP", "Make.com", "Bubble"],
+      tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
       category: "Prompt-built" as const

@@ -40,6 +40,15 @@ const ProjectsSection = () => {
       link: "https://cricket-fantasy-flare.vercel.app/",
       category: "Prompt-built" as const
     },
+    {
+      title: "Smart Portfolio Website",
+      description: "A modern, responsive portfolio website built with React and TypeScript. Features dark mode, smooth animations, interactive project showcases, and automated deployment. Showcases proficiency in modern web development practices and design principles.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Animations", "Responsive Design"],
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+      category: "Prompt-built" as const,
+      badge: "Featured"
+    },
   ];
 
   const categories = ["Prompt-built", "No-Code", "AI-integrated", "API-connected"];
@@ -111,9 +120,9 @@ const ProjectsSection = () => {
           {filteredProjects.map((project, index) => (
              <a
               key={index} 
-              href={project.link} // Use the project link as the href
-              target="_blank" // Open link in new tab
-              rel="noopener noreferrer" // Security best practice
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="transition-all duration-500 hover:scale-[1.02] hover:z-10 animate-grow-in focus:outline-none focus:ring-2 focus:ring-customBlue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-xl"
               style={{ animationDelay: `${index * 150}ms` }}
             >

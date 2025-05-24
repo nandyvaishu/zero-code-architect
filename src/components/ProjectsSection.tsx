@@ -41,11 +41,11 @@ const ProjectsSection = () => {
       category: "Prompt-built" as const
     },
     {
-      title: "Smart Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and TypeScript. Features dark mode, smooth animations, interactive project showcases, and automated deployment. Showcases proficiency in modern web development practices and design principles.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Animations", "Responsive Design"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      link: "#",
+      title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
+      description: "I built FortuneVerse, a Dockerized Next.js app where users get, submit, and AI-rewrite fortune cookie messages. It uses Genkit with Google's Gemini for the AI style shifting, all wrapped in a modern UI built with TypeScript, ShadCN, and Tailwind. It's a full-stack project demonstrating responsive design and AI integration.",
+      tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
+      image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
+      link: "https://6000-firebase-studio-1747891107449.cluster-iktsryn7xnhpexlu6255bftka4.cloudworkstations.dev/",
       category: "Prompt-built" as const,
       badge: "Featured"
     },

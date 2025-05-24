@@ -22,16 +22,18 @@ const AboutSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="md:order-2">
-            <div className="relative max-w-sm mx-auto">
-              <img
-                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                alt="About me"
-                className="rounded-xl shadow-lg hover-glow w-full h-auto"
-              />
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-customBlue-500 rounded-full shadow-md hover-lift transform hover:rotate-6 transition-transform duration-300">
-                <Rocket className="text-white h-12 w-12 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+            <div className="relative max-w-xs mx-auto">
+              <div className="w-64 h-64 mx-auto relative">
+                <img
+                  src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                  alt="About me"
+                  className="w-full h-full object-cover rounded-full shadow-lg hover-glow"
+                />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-customBlue-500 rounded-full shadow-md hover-lift transform hover:rotate-6 transition-transform duration-300 flex items-center justify-center">
+                  <Rocket className="text-white h-8 w-8 animate-pulse" />
+                </div>
               </div>
             </div>
           </div>
@@ -44,11 +46,11 @@ const AboutSection = () => {
               Prompt Engineer & No-Code Builder
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Though I have a strong foundation in traditional coding, I firmly believe that today’s technology enables me to deliver superior results through prompt engineering.
-              By iterating and refining my prompts, I create unique and improved UI/UX experiences. When necessary, I rely on my coding skills to fine-tune and fix any challenges that arise, blending both worlds for the best outcomes.
+              I specialize in delivering superior results through prompt engineering and no-code solutions. 
+              By combining AI tools with strategic thinking, I create unique UI/UX experiences that solve real problems.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                   <h4 className="text-sm font-semibold dark:text-white">

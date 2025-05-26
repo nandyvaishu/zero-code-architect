@@ -43,7 +43,7 @@ const ProjectsSection = () => {
     },
     {
       title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
-      description: "I built FortuneVerse, a Dockerized Next.js app where users get, submit, and AI-rewrite fortune cookie messages. It uses Genkit with Google's Gemini for the AI style shifting, all wrapped in a modern UI built with TypeScript, ShadCN, and Tailwind. It's a full-stack project demonstrating responsive design and AI integration. <a href=\"https://github.com/nandyvaishu/studio.git\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-customBlue-600 dark:text-customBlue-400 hover:underline\">GitHub Link</a>",
+      description: "I built FortuneVerse, a Dockerized Next.js app where users get, submit, and AI-rewrite fortune cookie messages. It uses Genkit with Google's Gemini for the AI style shifting, all wrapped in a modern UI built with TypeScript, ShadCN, and Tailwind. It's a full-stack project demonstrating responsive design and AI integration. GitHub: https://github.com/nandyvaishu/studio.git",
       
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",

@@ -54,11 +54,11 @@ const ProjectsSection = () => {
       badge: "Featured"
     },
     {
-      title: "Smart Portfolio Website",
-      description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark mode support, smooth animations, project filtering, and optimized performance. Showcases clean design principles and modern web development practices.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "Dark Mode"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      link: "https://nandhini-portfolio.vercel.app/",
+      title: "Recipe Finder & Manager | No-Code Glide App",
+      description: "A no-code app built with Glide to explore, manage, and edit a personalized recipe collection. Features include *category-based filtering* (Veg, Non-Veg, Dessert), *user authentication, **editable recipe cards* with images and tips, and a *responsive UI* with intuitive navigation. Perfect for showcasing no-code logic, clean design, and data structuring skills.",
+      tags: ["No-Code", "Glide App", "Recipe App", "Responsive Design", "Data Relations"],
+      image: "https://i.ibb.co/7m6RtR6/In-Shot-20250524-132839611.jpg",
+      link: "https://go.glideapps.com/play/aXUh1GNiPgJjbWPndJ0Z/dl/1c370a",
       category: "Prompt-built" as const,
       badge: "Featured"
     },

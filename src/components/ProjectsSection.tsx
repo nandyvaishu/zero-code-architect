@@ -46,7 +46,7 @@ const ProjectsSection = () => {
       description: "I built FortuneVerse, a Dockerized Next.js app where users get, submit, and AI-rewrite fortune cookie messages. It uses Genkit with Google's Gemini for the AI style shifting, all wrapped in a modern UI built with TypeScript, ShadCN, and Tailwind. It's a full-stack project demonstrating responsive design and AI integration.",
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
-      link: "https://6000-firebase-studio-1747891107449.cluster-iktsryn7xnhpexlu6255bftka4.cloudworkstations.dev/",
+      link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
       demoLink: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
       category: "Prompt-built" as const,
       badge: "Featured"

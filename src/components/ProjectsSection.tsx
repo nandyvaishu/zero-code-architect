@@ -22,6 +22,7 @@ const ProjectsSection = () => {
       tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       link: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
+      demoLink: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
       category: "API-connected" as const
     },
     {
@@ -46,6 +47,16 @@ const ProjectsSection = () => {
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
       link: "https://6000-firebase-studio-1747891107449.cluster-iktsryn7xnhpexlu6255bftka4.cloudworkstations.dev/",
+      demoLink: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
+      category: "Prompt-built" as const,
+      badge: "Featured"
+    },
+    {
+      title: "Smart Portfolio Website",
+      description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark mode support, smooth animations, project filtering, and optimized performance. Showcases clean design principles and modern web development practices.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "Dark Mode"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      link: "https://nandhini-portfolio.vercel.app/",
       category: "Prompt-built" as const,
       badge: "Featured"
     },

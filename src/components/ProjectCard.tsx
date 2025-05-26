@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface ProjectProps {
   title: string;
@@ -9,6 +9,7 @@ interface ProjectProps {
   tags: string[];
   image: string;
   link?: string;
+  demoLink?: string;
   category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
@@ -21,6 +22,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   tags,
   image,
   link,
+  demoLink,
   status,
   badge,
   imageClassName,
@@ -96,9 +98,9 @@ const ProjectCard: React.FC<ProjectProps> = ({
           {description}
         </p>
 
-        {/* Link button with animated arrow */}
-        {link && (
-          <div className="mt-auto pt-2 flex items-center">
+        {/* Link buttons with animated arrow */}
+        <div className="mt-auto pt-2 flex flex-col gap-2">
+          {link && (
             <a
               href={link}
               target="_blank"
@@ -111,8 +113,23 @@ const ProjectCard: React.FC<ProjectProps> = ({
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-400/50 group-hover/link:w-full transition-all duration-500"></span>
             </a>
-          </div>
-        )}
+          )}
+          
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors relative group/demo"
+            >
+              <span className="relative z-10 flex items-center">
+                {title.includes("Job Scraper") ? "View Spreadsheet" : "Watch Demo"}
+                <ExternalLink className="ml-1.5 h-3.5 w-3.5 transition-all duration-300 group-hover/demo:translate-x-1.5" />
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400/50 group-hover/demo:w-full transition-all duration-500"></span>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

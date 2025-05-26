@@ -21,8 +21,8 @@ const ProjectsSection = () => {
       description: "Built a job scraper workflow in n8n by arranging modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, Iterate, and Telegram. It automates daily job fetching, info extraction, and Telegram alerts—fully configured through visual node setup.",
       tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
-      link: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
-      demoLink: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
+      link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
+      demoLink: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
       category: "API-connected" as const
     },
     {

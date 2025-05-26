@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
       link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
-      demoLink: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
+      github repo Link: "https://github.com/nandyvaishu/studio.git",
       category: "Prompt-built" as const,
       badge: "Featured"
     },

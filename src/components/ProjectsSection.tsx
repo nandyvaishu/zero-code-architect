@@ -62,6 +62,24 @@ const ProjectsSection = () => {
       category: "Prompt-built" as const,
       badge: "Featured"
     },
+ {
+ title: "Upcoming Project 1",
+ description: "Details about this exciting new project will be available soon!",
+ tags: ["Work in Progress"],
+ image: "https://via.placeholder.com/400x300", // Placeholder image
+ link: "#", // Placeholder link
+ category: "Prompt-built" as const, // You can categorize it as appropriate later
+ badge: "Upcoming",
+ },
+ {
+ title: "Upcoming Project 2",
+ description: "Get ready for another innovative project!",
+ tags: ["Under Development"],
+ image: "https://via.placeholder.com/400x300", // Placeholder image
+ link: "#", // Placeholder link
+ category: "API-connected" as const, // You can categorize it as appropriate later
+ badge: "Upcoming",
+ },
   ];
 
   const categories = ["Prompt-built", "No-Code", "AI-integrated", "API-connected"];

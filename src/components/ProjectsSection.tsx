@@ -18,7 +18,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Job Scraper Automation Suite",
-      description: "Built a job scraper workflow in n8n by arranging modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, Iterate, and Telegram. It automates daily job fetching, info extraction, and Telegram alerts—fully configured through visual node setup.",
+      description: "I developed a fully automated Job Scraper Workflow using n8n, integrating modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, and Telegram. This no-code automation suite fetches daily job listings, extracts relevant information, and sends alerts via Telegram—all orchestrated through a visual node-based setup.While the workflow is currently inactive due to hosting limits, you can view the live job scraping output in this Google Sheet.(n8n workflow demo available on request.)",
       tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
@@ -46,7 +46,7 @@ const ProjectsSection = () => {
     },
     {
       title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
-      description:"I built FortuneVerse, a Dockerized Next.js app where users get, submit, and AI-rewrite fortune cookie messages. It uses Genkit with Google's Gemini for the AI style shifting, all wrapped in a modern UI built with TypeScript, ShadCN, and Tailwind. It's a full-stack project demonstrating responsive design and AI integration. [GitHub Repo](https://github.com/nandyvaishu/studio.git)"
+      description:"I built FortuneVerse, a full-stack AI-powered fortune cookie web app using Next.js, Genkit, and Docker. Users can generate, submit, and receive AI-rewritten fortune messages styled via Google's Gemini models. The app features a modern UI with TypeScript, ShadCN, and Tailwind CSS, showcasing responsive design and AI integration.Though currently not live due to Render’s free trial limitations, a demo video is available, along with the full GitHub repository.[GitHub Repo](https://github.com/nandyvaishu/studio.git)"
       ,
       
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],

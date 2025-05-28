@@ -47,17 +47,17 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email",
-      value: "contact@example.com",
+      value: "nandygavas@gmail.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "8610382303",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       title: "Location",
-      value: "Remote / Worldwide",
+      value: "Worldwide",
     },
   ];
 

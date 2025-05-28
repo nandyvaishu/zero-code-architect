@@ -67,18 +67,19 @@ const ProjectsSection = () => {
     },
     // Upcoming projects
  {
- title: "Upcoming Project 1",
- description: "Details about this exciting new project will be available soon!",
- tags: ["Work in Progress"],
- image: "https://via.placeholder.com/400x300", // Placeholder image
+ title: "AI Chatbot for Cricket Fantasy App (Google AI Studio)",
+ description: "Developing a smart AI chatbot using Google AI Studio to integrate into a custom-built Cricket Fantasy app developed with Deliverable AI. The chatbot is designed to enhance user engagement by answering queries, guiding users through game rules, team selections, and providing real-time assistance, all with natural language conversation capabilities.",
+ tags: ["Google AI Studio","Chatbot Integration","User Engagement","Fantasy Sports","AI-Powered UX"],
+ 
+ image: "https://i.ibb.co/wNq7qZ4p/In-Shot-20250528-112036172.jpg", // Placeholder image
  link: "#", // Placeholder link
  category: "Prompt-built" as const, // You can categorize it as appropriate later
  badge: "Upcoming" as const,
  },
  {
- title: "Upcoming Project 2",
- description: "Get ready for another innovative project!",
- tags: ["Under Development"],
+ title: "AI-Powered Recipe Generator (No-Code with Bubble)",
+ description: "Developing a no-code AI recipe generator using Bubble.io. This tool enables users to input their diet preference and receive personalized, AI-generated recipes. The project focuses on intuitive UI/UX, user preferences, and AI-powered suggestions to support healthy and creative cooking.",
+ tags: [""],
  image: "https://via.placeholder.com/400x300", // Placeholder image
  link: "#", // Placeholder link
  category: "API-connected" as const, // You can categorize it as appropriate later

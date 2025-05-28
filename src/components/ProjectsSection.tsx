@@ -22,7 +22,8 @@ const ProjectsSection = () => {
       tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
-      demoLink: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k",
+      // demoLink: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k", // Uncomment if you want to include a demo link
+      badge: "Featured",
       category: "API-connected" as const
     },
     {
@@ -31,7 +32,8 @@ const ProjectsSection = () => {
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Prompts"],
       image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",
-      category: "AI-integrated" as const
+      category: "AI-integrated" as const,
+      badge: "Featured",
     },
     {
       title: "Cricket Fantasy App",
@@ -39,7 +41,8 @@ const ProjectsSection = () => {
       tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
-      category: "Prompt-built" as const
+      category: "Prompt-built" as const,
+      badge: "Featured",
     },
     {
       title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
@@ -58,10 +61,11 @@ const ProjectsSection = () => {
       description: "A no-code app built with Glide to explore, manage, and edit a personalized recipe collection. Features include *category-based filtering* (Veg, Non-Veg, Dessert), *user authentication, **editable recipe cards* with images and tips, and a *responsive UI* with intuitive navigation. Showcasing no-code logic, clean design, and data structuring skills.",
       tags: ["No-Code", "Glide App", "Recipe App", "Responsive Design", "Data Relations"],
       image: "https://i.ibb.co/7m6RtR6/In-Shot-20250524-132839611.jpg",
-      link: "https://go.glideapps.com/play/aXUh1GNiPgJjbWPndJ0Z/dl/1c370a",
+      link: "https://go.glideapps.com/play/aXUh1GNiPgJjbWPndJ0Z/dl/1c370a", // Assuming this is the correct link
       category: "Prompt-built" as const,
       badge: "Featured"
     },
+    // Upcoming projects
  {
  title: "Upcoming Project 1",
  description: "Details about this exciting new project will be available soon!",
@@ -69,7 +73,7 @@ const ProjectsSection = () => {
  image: "https://via.placeholder.com/400x300", // Placeholder image
  link: "#", // Placeholder link
  category: "Prompt-built" as const, // You can categorize it as appropriate later
- badge: "Upcoming",
+ badge: "Upcoming" as const,
  },
  {
  title: "Upcoming Project 2",
@@ -78,12 +82,12 @@ const ProjectsSection = () => {
  image: "https://via.placeholder.com/400x300", // Placeholder image
  link: "#", // Placeholder link
  category: "API-connected" as const, // You can categorize it as appropriate later
- badge: "Upcoming",
+ badge: "Upcoming" as const,
  },
   ];
-
-  const categories = ["Prompt-built", "No-Code", "AI-integrated", "API-connected"];
   
+  const categories = Array.from(new Set(projects.map(project => project.category)));
+
   const filteredProjects = activeFilter 
     ? projects.filter(project => project.category === activeFilter)
     : projects;
@@ -92,7 +96,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 relative bg-white dark:bg-gray-900 overflow-hidden">
       {/* Background image with parallax effect */}
       <div className="absolute inset-0 z-0 transform transition-transform duration-1000 hover:scale-110">
-        <img 
+        <img
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="Background" 
           className="w-full h-full object-cover object-center opacity-[0.04] dark:opacity-[0.06]"
@@ -120,10 +124,10 @@ const ProjectsSection = () => {
             Explore the solutions I've built using AI tools, no-code platforms, and 
             visual development environments.
           </p>
-          
+
           {/* Category filter with bounce animation */}
           <div className="flex flex-wrap justify-center gap-3 mt-8 stagger-children">
-            <Button 
+            <Button
               variant={activeFilter === null ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveFilter(null)}
@@ -149,10 +153,10 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-             <a
-              key={index} 
-              href={project.link} 
-              target="_blank" 
+            <a
+              key={project.title}
+              href={project.link}
+              target="_blank"
               rel="noopener noreferrer" 
               className="transition-all duration-500 hover:scale-[1.02] hover:z-10 animate-grow-in focus:outline-none focus:ring-2 focus:ring-customBlue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-xl"
               style={{ animationDelay: `${index * 150}ms` }}
@@ -160,7 +164,7 @@ const ProjectsSection = () => {
               <ProjectCard {...project} />
              </a>
           ))}
-        </div>
+        </div> {/* Closing div for the project grid */}
         
         {/* More projects indicator with enhanced animation */}
         <div className="flex justify-center mt-12">

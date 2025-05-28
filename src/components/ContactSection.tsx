@@ -66,7 +66,7 @@ const ContactSection = () => {
       {/* Background image with overlay - more visible */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
+          src="https://media.istockphoto.com/id/1221854851/photo/jigsaw-puzzle.jpg?s=612x612&w=0&k=20&c=pszN1nU-qtzaHmTsKKaX1cOGQap1uC6hCtPg-39UkW0="
           alt="Background" 
           className="w-full h-full object-cover object-center opacity-10 dark:opacity-15"
         />

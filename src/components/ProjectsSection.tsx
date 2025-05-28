@@ -68,7 +68,7 @@ const ProjectsSection = () => {
     // Upcoming projects
  {
  title: "AI Chatbot for Cricket Fantasy App (Google AI Studio)",
- description: "Developing a smart AI chatbot using Google AI Studio to integrate into a custom-built Cricket Fantasy app developed with Deliverable AI. The chatbot is designed to enhance user engagement by answering queries, guiding users through game rules, team selections, and providing real-time assistance, all with natural language conversation capabilities.",
+ description: "Developing a smart AI chatbot using Google AI Studio to integrate into a custom-built Cricket Fantasy app developed with Lovable AI. The chatbot is designed to enhance user engagement by answering queries, guiding users through game rules, team selections, and providing real-time assistance, all with natural language conversation capabilities.",
  tags: ["Google AI Studio","Chatbot Integration","User Engagement","Fantasy Sports","AI-Powered UX"],
  
  image: "https://i.ibb.co/mFddZjHH/In-Shot-20250528-112814518.jpg", // Placeholder image

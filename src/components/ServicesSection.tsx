@@ -1,49 +1,68 @@
-
 import React from "react";
-import { AlertCircle, Code, Globe, Lightbulb, Puzzle, Settings } from "lucide-react";
+import {
+  Rocket,
+  Bot,
+  LayoutTemplate,
+  Paintbrush,
+  Repeat,
+  PlugZap,
+  Package,
+} from "lucide-react";
 import ServiceCard from "./ServiceCard";
 
 const ServicesSection = () => {
-  const services = [
+  const services: { title: string; description: string; icon: JSX.Element }[] = [
     {
-      title: "Prompt Engineering Consulting",
-      description: "Expert guidance on crafting effective prompts for AI tools and models to achieve your specific business goals.",
-      icon: <AlertCircle className="h-6 w-6" />,
+      title: "MVP Development (AI + No-Code)",
+      description:
+        "Launch-ready MVPs built in 3–7 days using Glide, Bubble, Firebase Studio, and Lovable AI — fast, functional, and scalable.",
+      icon: <Rocket className="h-6 w-6" />,
     },
     {
-      title: "No-Code Development",
-      description: "Custom web and mobile applications built with leading no-code platforms like Bubble, Webflow, and Adalo.",
-      icon: <Code className="h-6 w-6" />,
+      title: "AI Chatbot Development",
+      description:
+        "Custom chatbots for websites and apps using Google AI Studio and OpenAI — ideal for support, lead generation, or user guidance.",
+      icon: <Bot className="h-6 w-6" />,
+    },
+    {
+      title: "Full-Stack Web App Creation",
+      description:
+        "Develop fully responsive web apps with clean UI and real-time functionality using Firebase Studio and custom code.",
+      icon: <LayoutTemplate className="h-6 w-6" />,
+    },
+    {
+      title: "Website Redesign + UI/UX Revamp",
+      description:
+        "Revamp outdated sites with modern, user-friendly design and better performance across devices.",
+      icon: <Paintbrush className="h-6 w-6" />,
     },
     {
       title: "Workflow Automation",
-      description: "Automate your business processes with n8n, Make (Integromat), and other leading automation platforms.",
-      icon: <Settings className="h-6 w-6" />,
+      description:
+        "Save hours with smart automations using Make.com, n8n, and Google tools — perfect for tasks, emails, forms, and content.",
+      icon: <Repeat className="h-6 w-6" />,
     },
     {
-      title: "Digital Product Creation",
-      description: "End-to-end development of digital products from concept to launch without traditional coding.",
-      icon: <Puzzle className="h-6 w-6" />,
+      title: "API Integration",
+      description:
+        "Seamlessly connect your apps to live APIs (e.g. sports data, recipe, user systems) and handle custom response mapping.",
+      icon: <PlugZap className="h-6 w-6" />,
     },
     {
-      title: "UI/UX Design",
-      description: "Clean, modern designs focused on user experience with attention to responsiveness and accessibility.",
-      icon: <Lightbulb className="h-6 w-6" />,
-    },
-    {
-      title: "Integration Solutions",
-      description: "Connect your existing tools and platforms to create seamless workflows and enhance productivity.",
-      icon: <Globe className="h-6 w-6" />,
+      title: "Digital Product Development",
+      description:
+        "I create ready-to-launch digital tools like recipe generators and fantasy sports apps — build once, sell multiple times.",
+      icon: <Package className="h-6 w-6" />,
     },
   ];
 
   return (
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900 relative">
-      {/* Background image with overlay - more subtle */}
+      {/* Background image with subtle overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
-          alt="Background" 
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80"
+          alt="Background"
           className="w-full h-full object-cover object-center opacity-[0.03] dark:opacity-[0.05]"
         />
       </div>
@@ -77,7 +96,7 @@ const ServicesSection = () => {
           <div className="flex justify-center gap-4 flex-wrap">
             <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">Prompt Templates</div>
             <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">UI Component Kits</div>
-            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">No-Code Modules</div>
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 text-gray-600 dark:text-gray-300">No-Code Modules</div>            
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
- GithubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare.git",
+ githubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare.git",
       category: "Prompt-built" as const,
       badge: "Featured",
     },
@@ -163,7 +163,7 @@ const ProjectsSection = () => {
               className="transition-all duration-500 hover:scale-[1.02] hover:z-10 animate-grow-in focus:outline-none focus:ring-2 focus:ring-customBlue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-xl"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <ProjectCard {...project} />
+ <ProjectCard {...project} showGithubLink={true} />
              </a>
           ))}
         </div> {/* Closing div for the project grid */}

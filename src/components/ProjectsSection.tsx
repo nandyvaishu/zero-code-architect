@@ -41,6 +41,7 @@ const ProjectsSection = () => {
       tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
+ GithubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare.git",
       category: "Prompt-built" as const,
       badge: "Featured",
     },

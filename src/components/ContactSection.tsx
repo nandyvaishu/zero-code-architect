@@ -196,13 +196,10 @@ const ContactSection = () => {
                 <h3 className="text-lg font-semibold mb-4 dark:text-white">Office Hours</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex justify-between dark:text-gray-300">
-                    <span className="text-gray-600 dark:text-gray-400">Monday - Friday:</span>
+                    <span className="text-gray-600 dark:text-gray-400">Monday - Saturday:</span>
                     <span>9:00 AM - 6:00 PM</span>
                   </li>
-                  <li className="flex justify-between dark:text-gray-300">
-                    <span className="text-gray-600 dark:text-gray-400">Saturday:</span>
-                    <span>By appointment</span>
-                  </li>
+                  
                   <li className="flex justify-between dark:text-gray-300">
                     <span className="text-gray-600 dark:text-gray-400">Sunday:</span>
                     <span>Closed</span>

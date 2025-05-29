@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Mail, Github, Linkedin, Twitter, Instagram, ArrowUp } from "lucide-react";
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -15,8 +14,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Github className="h-5 w-5" />, href: "#", label: "GitHub" },
     { icon: <Linkedin className="h-5 w-5" />, href: "#", label: "LinkedIn" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", label: "Instagram" },
+    
     { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@example.com", label: "Email" },
   ];
 
@@ -34,9 +32,8 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:w-1/3">
             <h3 className="text-xl font-bold text-customGreen-400 mb-4">Portfolio</h3>
-            <p className="text-gray-400 mb-6">
-              Building modern digital solutions with AI tools and no-code platforms. 
-              Turning complex ideas into reality without traditional coding.
+ <p className="text-gray-400 mb-6">
+ Building modern digital solutions powered by AI and automation. Transforming complex ideas into scalable, real-world applications through rapid prototyping, clean UI, and efficient development workflows.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
@@ -103,11 +100,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                <a href="mailto:contact@example.com" className="hover:text-customGreen-400 transition-colors">
-                  contact@example.com
+                <a href="nandygavas@gmail.com" className="hover:text-customGreen-400 transition-colors">
+                  nandygavas@gmail.com
                 </a>
               </li>
-              <li className="text-gray-400">+1 (555) 123-4567</li>
+              <li className="text-gray-400">+91 8610382303</li>
               <li className="text-gray-400">Remote / Worldwide</li>
             </ul>
           </div>

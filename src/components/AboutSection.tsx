@@ -114,4 +114,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-export default AboutSection;

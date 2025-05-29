@@ -29,10 +29,10 @@ const AboutSection = () => {
                 <img
                   src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
                   alt="About me"
-                  className="w-full h-full object-cover rounded-full shadow-lg hover-glow"
+                  className="w-full h-full object-cover rounded-full shadow-lg" // Removed hover-glow as it's likely a custom class
                 />
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-customBlue-500 rounded-full shadow-md hover-lift transform hover:rotate-6 transition-transform duration-300 flex items-center justify-center">
-                  <Rocket className="text-white h-8 w-8 animate-pulse" />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-customBlue-500 rounded-full shadow-md transform hover:rotate-6 hover:translate-y-[-5px] transition-transform duration-300 flex items-center justify-center"> {/* Adjusted for standard hover effect */}
+                  <Rocket className="text-white h-8 w-8" /> {/* Removed animate-pulse as it's likely a custom class */}
                 </div>
               </div>
             </div>
@@ -43,16 +43,15 @@ const AboutSection = () => {
               About Me
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
-              Prompt Engineer & No-Code Builder
+            Prompt-Driven Creator & Digital Problem Solve
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              I specialize in delivering superior results through prompt engineering and no-code solutions. 
-              By combining AI tools with strategic thinking, I create unique UI/UX experiences that solve real problems.
+            I engineer smart web experiences by fusing the power of prompts, automation, and thoughtful design. Every project I craft is rooted in clarity, functionality, and a sharp focus on real-world impact.
             </p>
             
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
-                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 hover:translate-y-[-5px] transition-transform"> {/* Adjusted for standard hover effect */}
                   <h4 className="text-sm font-semibold dark:text-white">
                     <Code className="inline-block h-4 w-4 mr-2 text-customBlue-500" />
                     No-Code Development
@@ -66,7 +65,7 @@ const AboutSection = () => {
               </Card>
               
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
-                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 hover:translate-y-[-5px] transition-transform"> {/* Adjusted for standard hover effect */}
                   <h4 className="text-sm font-semibold dark:text-white">
                     <Wand2 className="inline-block h-4 w-4 mr-2 text-customBlue-500" />
                     Prompt Engineering
@@ -80,7 +79,7 @@ const AboutSection = () => {
               </Card>
               
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
-                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 hover:translate-y-[-5px] transition-transform"> {/* Adjusted for standard hover effect */}
                   <h4 className="text-sm font-semibold dark:text-white">
                     <GraduationCap className="inline-block h-4 w-4 mr-2 text-customBlue-500" />
                     Continuous Learning
@@ -94,7 +93,7 @@ const AboutSection = () => {
               </Card>
               
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
-                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+                <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 hover:translate-y-[-5px] transition-transform"> {/* Adjusted for standard hover effect */}
                   <h4 className="text-sm font-semibold dark:text-white">
                     <BookOpenCheck className="inline-block h-4 w-4 mr-2 text-customBlue-500" />
                     Problem Solving
@@ -114,4 +113,5 @@ const AboutSection = () => {
   );
 };
 
+export default AboutSection;
 export default AboutSection;

@@ -43,7 +43,7 @@ const AboutSection = () => {
               About Me
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white">
-            Prompt-Driven Creator & Digital Problem Solve
+            Prompt-Driven Creator & Digital Problem Solver
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             I engineer smart web experiences by fusing the power of prompts, automation, and thoughtful design. Every project I craft is rooted in clarity, functionality, and a sharp focus on real-world impact.

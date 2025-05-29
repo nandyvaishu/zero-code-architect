@@ -13,6 +13,7 @@ interface ProjectProps {
   category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
+  githubLink?: string;
   imageClassName?: string;
 }
 
@@ -25,6 +26,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   demoLink,
   status,
   badge,
+  githubLink,
   imageClassName,
 }) => {
   return (
@@ -94,8 +96,60 @@ const ProjectCard: React.FC<ProjectProps> = ({
         </h3>
 
         {/* Description - removed line-clamp-3 class to show full description */}
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 transition-colors duration-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
           {description}
+        </p>
+
+        {/* GitHub Repository Link */}
+        {githubLink && (
+          <div className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            <span className="font-medium">GitHub Repository: </span>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-customBlue-600 dark:text-customBlue-400 hover:underline transition-colors">{githubLink}</a>
+          </div>
+        )}
+
+        {/* Link buttons with animated arrow */}
+        <div className="mt-auto pt-2 flex flex-col gap-2">
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-customBlue-600 dark:text-customBlue-400 hover:text-customBlue-800 dark:hover:text-customBlue-300 transition-colors relative group/link"
+            >
+              <span className="relative z-10 flex items-center">
+                View Project
+                <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-all duration-300 group-hover/link:translate-x-1.5" />
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-400/50 group-hover/link:w-full transition-all duration-500"></span>
+            </a>
+          )}
+          
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors relative group/demo"
+            >
+              <span className="relative z-10 flex items-center">
+                {title.includes("Job Scraper") ? "View Spreadsheet" : "Watch Demo"}
+                <ExternalLink className="ml-1.5 h-3.5 w-3.5 transition-all duration-300 group-hover/demo:translate-x-1.5" />
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400/50 group-hover/demo:w-full transition-all duration-500"></span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;
         </p>
 
         {/* Link buttons with animated arrow */}

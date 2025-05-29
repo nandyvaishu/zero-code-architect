@@ -13,7 +13,6 @@ interface ProjectProps {
   category: "Prompt-built" | "No-Code" | "API-connected" | "AI-integrated";
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
-  githubLink?: string;
   imageClassName?: string;
 }
 
@@ -26,7 +25,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
   demoLink,
   status,
   badge,
-  githubLink,
   imageClassName,
 }) => {
   return (
@@ -95,7 +93,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
           {title}
         </h3>
 
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2 transition-colors duration-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
+        {/* Description - removed line-clamp-3 class to show full description */}
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
           {description}
         </p>
 
@@ -127,13 +126,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
                 {title.includes("Job Scraper") ? "View Spreadsheet" : "Watch Demo"}
                 <ExternalLink className="ml-1.5 h-3.5 w-3.5 transition-all duration-300 group-hover/demo:translate-x-1.5" />
               </span>
-
-          {githubLink && (
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-              <span className="font-semibold">GitHub Repository: </span>
-              <span className="select-all">{githubLink}</span>
-            </p>
-          )}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400/50 group-hover/demo:w-full transition-all duration-500"></span>
             </a>
           )}

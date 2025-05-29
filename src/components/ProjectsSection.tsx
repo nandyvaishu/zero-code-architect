@@ -14,6 +14,7 @@ const ProjectsSection = () => {
       tags: ["HTML", "CSS", "JavaScript", "Prompt"],
       image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
+      githubLink: "https://github.com/NANDHINI7390/Farm-fresh.git",
       category: "No-Code" as const,
       badge: "AI + Automation"
     },
@@ -33,6 +34,7 @@ const ProjectsSection = () => {
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Prompts"],
       image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",
+      githubLink: "https://github.com/NANDHINI7390/superecom.git",
       category: "AI-integrated" as const,
       badge: "Featured",
     },
@@ -53,6 +55,7 @@ const ProjectsSection = () => {
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
       link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
+ githubLink: "https://github.com/nandyvaishu/studio.git",
       
       category: "Prompt-built" as const,
       badge: "Featured"

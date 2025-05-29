@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+// Define Project type with optional githubLink
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   
@@ -47,8 +48,7 @@ const ProjectsSection = () => {
     },
     {
       title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
-      description:"I built FortuneVerse, a full-stack AI-powered fortune cookie web app using Next.js, Genkit, and Docker. Users can generate, submit, and receive AI-rewritten fortune messages styled via Google's Gemini models. The app features a modern UI with TypeScript, ShadCN, and Tailwind CSS, showcasing responsive design and AI integration.Though currently not live due to Render’s free trial limitations, a demo video is available, along with the full GitHub repository.[GitHub Repo](https://github.com/nandyvaishu/studio.git)"
-      ,
+      description: "I built FortuneVerse, a full-stack AI-powered fortune cookie web app using Next.js, Genkit, and Docker. Users can generate, submit, and receive AI-rewritten fortune messages styled via Google's Gemini models. The app features a modern UI with TypeScript, ShadCN, and Tailwind CSS, showcasing responsive design and AI integration.Though currently not live due to Render’s free trial limitations, a demo video is available, along with the full GitHub repository.",
       
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
@@ -162,8 +162,13 @@ const ProjectsSection = () => {
               rel="noopener noreferrer" 
               className="transition-all duration-500 hover:scale-[1.02] hover:z-10 animate-grow-in focus:outline-none focus:ring-2 focus:ring-customBlue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-xl"
               style={{ animationDelay: `${index * 150}ms` }}
-            >
- <ProjectCard {...project} showGithubLink={true} />
+ >
+ {/* Instead of wrapping the ProjectCard with an anchor, pass the link to the card
+ and let the card handle the click, which also allows us to render the github link */}
+ <ProjectCard {...project} 
+              // Pass link and githubLink explicitly
+              link={project.link}
+              githubLink={project.githubLink} />
              </a>
           ))}
         </div> {/* Closing div for the project grid */}

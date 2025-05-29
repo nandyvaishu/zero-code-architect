@@ -155,14 +155,21 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <div
+            <a
               key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer" 
               className="transition-all duration-500 hover:scale-[1.02] hover:z-10 animate-grow-in focus:outline-none focus:ring-2 focus:ring-customBlue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-xl"
               style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <ProjectCard {...project}
+ >
+ {/* Instead of wrapping the ProjectCard with an anchor, pass the link to the card
+ and let the card handle the click, which also allows us to render the github link */}
+ <ProjectCard {...project} 
+              // Pass link and githubLink explicitly
+              link={project.link}
               githubLink={project.githubLink} />
-            </div>
+             </a>
           ))}
         </div> {/* Closing div for the project grid */}
         

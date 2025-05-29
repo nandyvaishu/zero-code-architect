@@ -14,6 +14,7 @@ interface ProjectProps {
   status?: "In Progress" | "Completed" | "Coming Soon";
   badge?: string;
   imageClassName?: string;
+  githubLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({
@@ -26,6 +27,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   status,
   badge,
   imageClassName,
+  githubLink,
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
@@ -97,6 +99,23 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300 group-hover:text-gray-800 dark:group-hover:text-gray-200">
           {description}
         </p>
+
+        {/* GitHub Link */}
+        {githubLink && (
+          <div className="mb-2">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+              GitHub Repository:
+            </p>
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-customBlue-600 dark:text-customBlue-400 hover:underline break-all"
+            >
+              {githubLink}
+            </a>
+          </div>
+        )}
 
         {/* Link buttons with animated arrow */}
         <div className="mt-auto pt-2 flex flex-col gap-2">

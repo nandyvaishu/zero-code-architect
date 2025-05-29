@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       badge: "Featured",
     },
     {
-      title: "FortuneVerse:AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
+      title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
       description: "I built FortuneVerse, a full-stack AI-powered fortune cookie web app using Next.js, Genkit, and Docker. Users can generate, submit, and receive AI-rewritten fortune messages styled via Google's Gemini models. The app features a modern UI with TypeScript, ShadCN, and Tailwind CSS, showcasing responsive design and AI integration.Though currently not live due to Render’s free trial limitations, a demo video is available, along with the full GitHub repository.",
       
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],

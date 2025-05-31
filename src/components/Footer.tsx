@@ -101,7 +101,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-gray-400">
                 <a href="nandygavas@gmail.com" className="hover:text-customGreen-400 transition-colors">
-                  nandygavas@gmail.com
+                  mailto:nandygavas@gmail.com
                 </a>
               </li>
               <li className="text-gray-400">+91 8610382303</li>

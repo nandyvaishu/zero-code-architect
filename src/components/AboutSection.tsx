@@ -1,7 +1,8 @@
 
 import React from "react";
-import { Rocket, Code, Wand2, GraduationCap, BookOpenCheck } from "lucide-react";
+import { Rocket, Code, Wand2, GraduationCap, BookOpenCheck, Download } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const AboutSection = () => {
   return (
@@ -27,7 +28,7 @@ const AboutSection = () => {
             <div className="relative max-w-xs mx-auto">
               <div className="w-64 h-64 mx-auto relative">
                 <img
-                  src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                  src="https://i.ibb.co/zHXFR89N/In-Shot-20250530-075659197.jpg"
                   alt="About me"
                   className="w-full h-full object-cover rounded-full shadow-lg" // Removed hover-glow as it's likely a custom class
                 />
@@ -49,6 +50,17 @@ const AboutSection = () => {
             I engineer smart web experiences by fusing the power of prompts, automation, and thoughtful design. Every project I craft is rooted in clarity, functionality, and a sharp focus on real-world impact.
             </p>
             
+            <div className="mb-8">
+              <a
+                href="https://drive.google.com/file/d/1K0rNEHXJcv935Vn-F3BPtg_j0Uf3GYov/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="resume.pdf"
+                className="inline-flex items-center animate-bounce-slow hover:animate-none"
+              >
+                <Download className="mr-2 h-4 w-4" /> Download Resume
+              </a>
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white dark:bg-gray-800 shadow-md hover-lift">
                 <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 hover:translate-y-[-5px] transition-transform"> {/* Adjusted for standard hover effect */}

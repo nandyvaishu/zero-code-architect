@@ -103,17 +103,17 @@ const ProjectCard: React.FC<ProjectProps> = ({
         {/* GitHub Link */}
         {githubLink && (
           <div className="mb-2">
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1 flex items-center">
               GitHub Repository:
+              <a
+                href={githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-sm text-customBlue-600 dark:text-customBlue-400 hover:underline break-all"
+              >
+                {githubLink}
+              </a>
             </p>
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-customBlue-600 dark:text-customBlue-400 hover:underline break-all"
-            >
-              {githubLink}
-            </a>
           </div>
         )}
 

@@ -26,6 +26,7 @@ const Navbar = () => {
     { name: "Projects", href: "#projects" },
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
+    { name: "Resume", href: "https://drive.google.com/file/d/1K0rNEHXJcv935Vn-F3BPtg_j0Uf3GYov/view?usp=drivesdk", external: true },
   ];
 
   return (
@@ -50,7 +51,9 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
+              target={link.external ? "_blank" : undefined}
               className={cn(
+
                 "px-4 py-2 rounded-md text-sm font-medium transition-colors",
                 "text-gray-700 hover:text-customBlue-500 dark:text-gray-300 dark:hover:text-white",
                 "relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-customBlue-500",
@@ -89,6 +92,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-customBlue-500 dark:hover:text-white text-sm font-medium"
                 >

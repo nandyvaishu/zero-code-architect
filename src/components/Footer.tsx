@@ -12,10 +12,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "#", label: "GitHub" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", label: "LinkedIn" },
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/NANDHINI7390", label: "GitHub" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/nandhini-kalidassan-532755259", label: "LinkedIn" },
     
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@example.com", label: "Email" },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:nandygavas@gmail.com", label: "Email" },
   ];
 
   const footerLinks = [

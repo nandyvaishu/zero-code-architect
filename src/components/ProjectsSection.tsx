@@ -2,121 +2,194 @@ import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import CaseStudyModal from "./CaseStudyModal"; // Modal component
 
-// Define Project type with optional githubLink
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
-  
+  const [open, setOpen] = useState(false);
+  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>(null);
+
   const projects = [
     {
       title: "Farm to Frontend ",
-      description: "A sleek, fully functional food website crafted with zero manual coding—just smart prompts. Features a responsive design, interactive shop, blog, and contact form, all built using HTML, CSS, and JavaScript",
+      description:
+        "A sleek, fully functional food website crafted with zero manual coding—just smart prompts. Features a responsive design, interactive shop, blog, and contact form, all built using HTML, CSS, and JavaScript",
       tags: ["HTML", "CSS", "JavaScript", "Prompt"],
       image: "https://i.ibb.co/HfXpFZgZ/In-Shot-20250519-143936568.jpg",
       link: "https://nandhini7390.github.io/Farm-fresh/",
       githubLink: "https://github.com/NANDHINI7390/Farm-fresh.git",
       category: "No-Code" as const,
-      badge: "AI + Automation"
+      badge: "AI + Automation",
+      caseStudy: `
+**Challenge:** Build a fully functional website for a food brand using only prompt engineering without manual coding.
+
+**Approach:** Used ChatGPT to generate HTML, CSS, and JavaScript components for each section—hero, products, blog, and contact—iteratively refining the design through smart prompts.
+
+**Result:**
+- Clean responsive layout.
+- Functional shopping section, blog, and contact form.
+- No coding done manually—just prompt crafting.
+
+**Outcome:** Showcased the power of prompt engineering in creating complete websites.`,
     },
     {
       title: "Job Scraper Automation Suite",
-      description: "I developed a fully automated Job Scraper Workflow using n8n, integrating modules like Scheduler, Gmail, RSS, Loop, Extract, Google Sheets, and Telegram. This no-code automation suite fetches daily job listings, extracts relevant information, and sends alerts via Telegram—all orchestrated through a visual node-based setup.While the workflow is currently inactive due to hosting limits, you can view the live job scraping output in this Google Sheet.(n8n workflow demo available on request.)",
+      description:
+        "Fully automated Job Scraper Workflow using n8n, integrating Gmail, RSS, Google Sheets, and Telegram. Fetches daily jobs and delivers them via Telegram.",
       tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
-      // demoLink: "https://nandy.app.n8n.cloud/workflow/aL4hWDl14RInxt1k", // Uncomment if you want to include a demo link
       badge: "Featured",
-      category: "API-connected" as const
+      category: "API-connected" as const,
+      caseStudy: `
+**Challenge:** Automate daily job extraction and delivery without writing code.
+
+**Approach:** Built a complete n8n workflow using visual nodes:
+- RSS for job feeds,
+- HTML Extract for parsing data,
+- Gmail/Telegram for delivery,
+- Google Sheets for storage.
+
+**Result:**
+- Zero manual intervention.
+- Jobs delivered daily in Telegram & Sheets.
+- Easy to maintain & scalable.
+
+**Impact:** A reusable no-code framework for job or data scraping tasks.`,
     },
     {
       title: "Remodified Ecom",
-      description: "This project demonstrates my expertise in redesigning an outdated CodePen site using HTML, CSS, JavaScript, and Bootstrap. It reflects my ability to transform legacy websites into modern, user-centric platforms with enhanced UI and UX.",
+      description:
+        "Redesigned an outdated CodePen site using modern HTML, CSS, JavaScript, and Bootstrap. Improved UI/UX, responsive layout, and interactivity.",
       tags: ["HTML", "CSS", "JS", "Bootstrap", "Prompts"],
       image: "https://i.ibb.co/0jfRKkf5/In-Shot-20250519-144050859.jpg",
       link: "https://nandhini7390.github.io/superecom/",
       githubLink: "https://github.com/NANDHINI7390/superecom.git",
       category: "AI-integrated" as const,
       badge: "Featured",
+      caseStudy: `
+**Challenge:** Modernize a legacy CodePen design into a functional ecommerce site.
+
+**Approach:** Redesigned layout and interactivity using prompts to generate Bootstrap, HTML, and JavaScript. Improved UX, mobile responsiveness, and visual appeal.
+
+**Result:**
+- Cleaner layout.
+- Responsive shopping cards and navigation.
+- Enhanced with Bootstrap interactivity.
+
+**Impact:** Demonstrated how AI-generated code can elevate outdated UIs into modern experiences.`,
     },
     {
       title: "Cricket Fantasy App",
-      description: "Built a full-featured fantasy cricket app using LovableAI with sign-in, Google login, live match data via CricAPI, league creation, and wallet modules. Also integrated a mock AI chatbot for interactive user experience.",
+      description:
+        "Fantasy cricket app using LovableAI with Google login, live CricAPI data, wallet, leagues, and a chatbot prototype.",
       tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",
- githubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare.git",
+      githubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare.git",
       category: "Prompt-built" as const,
       badge: "Featured",
+      caseStudy: `
+**Challenge:** Develop a fantasy cricket app using AI/low-code tools.
+
+**Approach:** Leveraged Lovable AI to design and integrate:
+- Google login,
+- Real-time data via CricAPI,
+- Wallet and league systems.
+
+**Result:**
+- Full UX flow with API integration.
+- User dashboard with team creation.
+- Chatbot concept added for engagement.
+
+**Impact:** Brought a Dream11-like product to life using minimal hand coding.`,
     },
     {
-      title: "FortuneVerse: AI-Powered Fortune Cookie App (Next.js, Genkit & Docker)",
-      description: "I built FortuneVerse, a full-stack AI-powered fortune cookie web app using Next.js, Genkit, and Docker. Users can generate, submit, and receive AI-rewritten fortune messages styled via Google's Gemini models. The app features a modern UI with TypeScript, ShadCN, and Tailwind CSS, showcasing responsive design and AI integration.Though currently not live due to Render’s free trial limitations, a demo video is available, along with the full GitHub repository.",
-      
+      title: "FortuneVerse: AI-Powered Fortune Cookie App",
+      description:
+        "Built with Next.js, Genkit, and Docker, FortuneVerse generates and rewrites fortunes using Google's Gemini model. Features modern UI, API, and containerized deployment.",
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
       link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
- githubLink: "https://github.com/nandyvaishu/studio.git",
-      
+      githubLink: "https://github.com/nandyvaishu/studio.git",
       category: "Prompt-built" as const,
-      badge: "Featured"
+      badge: "Featured",
+      caseStudy: `
+**Challenge:** Create an interactive web app using generative AI to simulate fortune cookies.
+
+**Approach:** Built with:
+- Next.js (UI & logic),
+- Genkit for Gemini AI integration,
+- Docker for containerization,
+- ShadCN for styling.
+
+**Result:**
+- Users receive and edit fortunes.
+- Gemini rewrites them dynamically.
+- Clean API and UI with full-stack structure.
+
+**Impact:** Blended frontend innovation with AI and backend infra into one responsive product.`,
     },
     {
       title: "Recipe Finder & Manager | No-Code Glide App",
-      description: "A no-code app built with Glide to explore, manage, and edit a personalized recipe collection. Features include *category-based filtering* (Veg, Non-Veg, Dessert), *user authentication, **editable recipe cards* with images and tips, and a *responsive UI* with intuitive navigation. Showcasing no-code logic, clean design, and data structuring skills.",
+      description:
+        "No-code Glide app for browsing, managing, and editing personalized recipes with category filtering and a responsive UI.",
       tags: ["No-Code", "Glide App", "Recipe App", "Responsive Design", "Data Relations"],
       image: "https://i.ibb.co/7m6RtR6/In-Shot-20250524-132839611.jpg",
-      link: "https://go.glideapps.com/play/aXUh1GNiPgJjbWPndJ0Z/dl/1c370a", // Assuming this is the correct link
+      link: "https://go.glideapps.com/play/aXUh1GNiPgJjbWPndJ0Z/dl/1c370a",
       category: "Prompt-built" as const,
-      badge: "Featured"
-    },
-    // Upcoming projects
- {
- title: "AI Chatbot for Cricket Fantasy App (Google AI Studio)",
- description: "Developing a smart AI chatbot using Google AI Studio to integrate into a custom-built Cricket Fantasy app developed with Lovable AI. The chatbot is designed to enhance user engagement by answering queries, guiding users through game rules, team selections, and providing real-time assistance, all with natural language conversation capabilities.",
- tags: ["Google AI Studio","Chatbot Integration","User Engagement","Fantasy Sports","AI-Powered UX"],
- 
- image: "https://i.ibb.co/mFddZjHH/In-Shot-20250528-112814518.jpg", // Placeholder image
- link: "#", // Placeholder link
- category: "Prompt-built" as const, // You can categorize it as appropriate later
- badge: "Upcoming" as const,
- },
- {
- title: "AI-Powered Recipe Generator (No-Code with Bubble)",
- description: "Developing a no-code AI recipe generator using Bubble.io. This tool enables users to input their diet preference and receive personalized, AI-generated recipes. The project focuses on intuitive UI/UX, user preferences, and AI-powered suggestions to support healthy and creative cooking.",
- tags: ["Bubble.io","No-Code Development","AI Integration","Recipe Generator","AI Cooking Assistant"],
- image: "https://i.ibb.co/KcjmKQNH/In-Shot-20250528-114901190.jpg", // Placeholder image
- link: "#", // Placeholder link
- category: "API-connected" as const, // You can categorize it as appropriate later
- badge: "Upcoming" as const,
- },
-  ];
-  
-  const categories = Array.from(new Set(projects.map(project => project.category)));
+      badge: "Featured",
+      caseStudy: `
+**Challenge:** Develop a personalized recipe management system with zero code.
 
-  const filteredProjects = activeFilter 
-    ? projects.filter(project => project.category === activeFilter)
+**Approach:** Used Glide’s no-code platform to:
+- Add category filters (Veg/Non-Veg/Dessert),
+- Enable editing and image uploading,
+- Link data tables using Glide’s visual logic.
+
+**Result:**
+- Fully editable and responsive recipe book.
+- Easy navigation and user-friendly UI.
+- Auth system for secure access.
+
+**Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
+    },
+  ];
+
+  const categories = Array.from(new Set(projects.map((p) => p.category)));
+
+  const handleViewCaseStudy = (caseStudy: string) => {
+    setActiveCaseStudy(caseStudy);
+    setOpen(true);
+  };
+
+  const filteredProjects = activeFilter
+    ? projects.filter((p) => p.category === activeFilter)
     : projects;
 
   return (
     <section id="projects" className="py-20 relative bg-white dark:bg-gray-900 overflow-hidden">
-      {/* Background image with parallax effect */}
+      {/* Background */}
       <div className="absolute inset-0 z-0 transform transition-transform duration-1000 hover:scale-110">
         <img
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
-          alt="Background" 
+          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=2000&q=80"
+          alt="Background"
           className="w-full h-full object-cover object-center opacity-[0.04] dark:opacity-[0.06]"
         />
       </div>
-      
-      {/* Floating animated decorative elements */}
+
+      {/* Decoration */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-customBlue-50 dark:bg-customBlue-900/20 rounded-full opacity-20 dark:opacity-10 blur-3xl animate-float"></div>
         <div className="absolute top-1/3 -left-16 w-48 h-48 bg-customBlue-50 dark:bg-customBlue-900/20 rounded-full opacity-20 dark:opacity-10 blur-3xl animate-pulse-glow"></div>
       </div>
-      
+
+      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 relative animate-slide-in-bottom">
-          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 dark:bg-customBlue-900/30 text-customBlue-600 dark:text-customBlue-300 text-sm font-medium rounded-full animate-pulse-glow">My Work</div>
+          <div className="inline-block mb-2 px-3 py-1 bg-customBlue-50 dark:bg-customBlue-900/30 text-customBlue-600 dark:text-customBlue-300 text-sm font-medium rounded-full animate-pulse-glow">
+            My Work
+          </div>
           <div className="inline-block relative">
             <div className="absolute -top-10 -right-10 text-6xl text-customBlue-100 dark:text-customBlue-900/30 font-bold opacity-30 animate-float">
               {projects.length}
@@ -126,11 +199,9 @@ const ProjectsSection = () => {
             </h2>
           </div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Explore the solutions I've built using AI tools, no-code platforms, and 
-            visual development environments.
+            Explore the solutions I've built using AI tools, no-code platforms, and visual development environments.
           </p>
 
-          {/* Category filter with bounce animation */}
           <div className="flex flex-wrap justify-center gap-3 mt-8 stagger-children">
             <Button
               variant={activeFilter === null ? "default" : "outline"}
@@ -140,7 +211,6 @@ const ProjectsSection = () => {
             >
               All Projects
             </Button>
-            
             {categories.map((category, index) => (
               <Button
                 key={category}
@@ -156,18 +226,20 @@ const ProjectsSection = () => {
           </div>
         </div>
 
+        {/* Projects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.title}
               {...project}
-              // Pass link and githubLink explicitly
               style={{ animationDelay: `${index * 150}ms` }}
+              caseStudy={project.caseStudy}
+              onViewCaseStudy={handleViewCaseStudy}
             />
           ))}
-        </div> {/* Closing div for the project grid */}
-        
-        {/* More projects indicator with enhanced animation */}
+        </div>
+
+        {/* Footer Note */}
         <div className="flex justify-center mt-12">
           <div className="relative group cursor-pointer animate-fade-in" style={{ animationDelay: "0.8s" }}>
             <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
@@ -178,6 +250,12 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+
+      <CaseStudyModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        content={activeCaseStudy || ""}
+      />
     </section>
   );
 };

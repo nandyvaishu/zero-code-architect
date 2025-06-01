@@ -15,6 +15,8 @@ interface ProjectProps {
   badge?: string;
   imageClassName?: string;
   githubLink?: string;
+  caseStudy?: string; // Add caseStudy prop
+  onViewCaseStudy?: (caseStudy: string) => void; // Add onViewCaseStudy prop
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({
@@ -28,6 +30,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   badge,
   imageClassName,
   githubLink,
+  caseStudy, // Destructure new prop
+  onViewCaseStudy, // Destructure new prop
 }) => {
   return (
     <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
@@ -116,6 +120,23 @@ const ProjectCard: React.FC<ProjectProps> = ({
             </p>
           </div>
         )}
+
+        {/* View Case Study Link */}
+        {caseStudy && onViewCaseStudy && (
+          <div className="mb-3">
+            <button
+              onClick={() => onViewCaseStudy(caseStudy)}
+              className="inline-flex items-center text-sm font-medium text-customBlue-600 dark:text-customBlue-400 hover:text-customBlue-800 dark:hover:text-customBlue-300 transition-colors relative group/case-study"
+            >
+              <span className="relative z-10 flex items-center">
+                View Case Study
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-400/50 group-hover/case-study:w-full transition-all duration-500"></span>
+            </button>
+          </div>
+        )}
+
+
 
         {/* Link buttons with animated arrow */}
         <div className="mt-auto pt-2 flex flex-col gap-2">

@@ -25,6 +25,7 @@ const Navbar = () => {
     { name: "Skills", href: "#tech-stack" },
     { name: "Projects", href: "#projects" },
     { name: "Services", href: "#services" },
+ { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
     { name: "Resume", href: "https://drive.google.com/file/d/1K0rNEHXJcv935Vn-F3BPtg_j0Uf3GYov/view?usp=drivesdk", external: true },
   ];

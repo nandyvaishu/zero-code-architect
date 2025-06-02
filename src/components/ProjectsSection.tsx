@@ -6,6 +6,7 @@ import CaseStudyModal from "./CaseStudyModal"; // Modal component
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [showUpcoming, setShowUpcoming] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>(null);
 
@@ -154,18 +155,36 @@ const ProjectsSection = () => {
 
 **Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
     },
+    // Upcoming Projects
+    {
+      title: "AI-Powered Chatbot for Cricket Fantasy  App(Google  AI  Studio)",
+      description:
+        " Devoleping a  smart  AI  chatbot  using   Google  AI  Studio  to  intergrate into  a  custom -built cricket Fantasy app devoleped with Lovable AI.The chatbot used to enhance user engagement by answeringqueries like team selectio,real time assistance with just natural language conversation",
+      tags: ["Google AI Studio", "Chatbot Integration", "User Engagement", "Fantasy Sports",],
+      image: "https://i.ibb.co/wNq7qZ4p/In-Shot-20250528-112036172.jpg", // Placeholder image
+      
+      link: "#",
+      githubLink: "#",
+      category: "AI-integrated" as const,
+      badge: "Upcoming",
+      caseStudy: null, // No case study yet
+      isUpcoming: true,
+    },
+    
   ];
 
-  const categories = Array.from(new Set(projects.map((p) => p.category)));
+  const categories = Array.from(new Set(projects.filter(p => !p.isUpcoming).map((p) => p.category)));
 
   const handleViewCaseStudy = (caseStudy: string) => {
-    setActiveCaseStudy(caseStudy);
-    setOpen(true);
+ setActiveCaseStudy(caseStudy);
+ setOpen(true);
   };
-
   const filteredProjects = activeFilter
-    ? projects.filter((p) => p.category === activeFilter)
-    : projects;
+    ? projects
+        .filter((p) => !p.isUpcoming) // Exclude upcoming projects initially
+ .filter((p) => p.category === activeFilter)
+
+    : projects.filter((p) => !p.isUpcoming); // Only show non-upcoming projects initially
 
   return (
     <section id="projects" className="py-20 relative bg-white dark:bg-gray-900 overflow-hidden">
@@ -226,30 +245,51 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              style={{ animationDelay: `${index * 150}ms` }}
-              caseStudy={project.caseStudy}
+ {/* Recent Projects */}
+ {filteredProjects.length > 0 && (
+ <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+ {filteredProjects.map((project, index) => (
+ <ProjectCard
+ key={project.title}
+ {...project}
+ style={{ animationDelay: `${index * 150}ms` }}
+ caseStudy={project.caseStudy}
               onViewCaseStudy={handleViewCaseStudy}
-            />
-          ))}
-        </div>
+ />
+ ))}
+ </div>
+ )}
 
-        {/* Footer Note */}
-        <div className="flex justify-center mt-12">
-          <div className="relative group cursor-pointer animate-fade-in" style={{ animationDelay: "0.8s" }}>
-            <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
-              More projects coming soon
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />
-            </div>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-400 group-hover:w-full transition-all duration-700"></div>
+        {/* Upcoming Projects (conditionally rendered) */}
+        {showUpcoming && projects.filter(p => p.isUpcoming).length > 0 && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 animate-fade-in-up">
+            {projects
+ .filter(p => p.isUpcoming)
+              .slice(0, 1).map((project, index) => (
+               <ProjectCard
+               key={project.title}
+               {...project}
+               onViewCaseStudy={handleViewCaseStudy}
+             />
+            ))}
           </div>
-        </div>
+        )}
+ {/* Link to show upcoming projects */}
+        {projects.filter(p => p.isUpcoming).length > 0 && (
+ <div className="flex justify-center mt-12">
+ <div className="relative group cursor-pointer animate-fade-in" style={{ animationDelay: "0.8s" }} onClick={() => setShowUpcoming(!showUpcoming)} >
+ <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
+ {showUpcoming ? 'Hide upcoming projects' : 'More projects coming soon'}
+
+
+ <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />
+ </div>
+ <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-400 group-hover:w-full transition-all duration-700"></div>
+ </div>
+            </div>
+ )}
       </div>
+
 
       <CaseStudyModal
         isOpen={open}

@@ -36,10 +36,9 @@ const ProjectsSection = () => {
     {
       title: "Job Scraper Automation Suite",
       description:
-        "Fully automated Job Scraper Workflow using n8n, integrating Gmail, RSS, Google Sheets, and Telegram. Fetches daily jobs and delivers them via Telegram.",
-      tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
+        "Fully automated Job Scraper Workflow using n8n, integrating Gmail, RSS, Google Sheets, and Telegram. Fetches daily jobs and delivers them via Telegram.The output of this automation can be viewed directly through the linked Google Spreadsheet, which reflects the live data processed by the job scraping workflow previously hosted on n8n.",
+ tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
-      link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
       badge: "Featured",
       category: "API-connected" as const,
       caseStudy: `
@@ -108,7 +107,7 @@ const ProjectsSection = () => {
     {
       title: "FortuneVerse: AI-Powered Fortune Cookie App",
       description:
-        "Built with Next.js, Genkit, and Docker, FortuneVerse generates and rewrites fortunes using Google's Gemini model. Features modern UI, API, and containerized deployment.",
+        "Built with Next.js, Genkit, and Docker, FortuneVerse generates and rewrites fortunes using Google's Gemini model. Features modern UI, API, and containerized deployment.The live deployment was previously hosted on Render's free tier. While it’s currently paused, I’d be happy to share a Firebase Studio preview or provide a quick walkthrough upon request.The complete codebase is available on GitHub.",
       tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
       image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
       link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",

@@ -155,20 +155,42 @@ const ProjectsSection = () => {
 
 **Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
     },
-    // Upcoming Projects
+    // Recent Projects
     {
-      title: "AI-Powered Chatbot for Cricket Fantasy  App(Google  AI  Studio)",
+      title: "AI-Powered Cricket Fantasy Assistant",
       description:
-        " Devoleping a  smart  AI  chatbot  using   Google  AI  Studio  to  intergrate into  a  custom -built cricket Fantasy app devoleped with Lovable AI.The chatbot used to enhance user engagement by answeringqueries like team selectio,real time assistance with just natural language conversation",
-      tags: ["Google AI Studio", "Chatbot Integration", "User Engagement", "Fantasy Sports",],
+        "An intelligent chatbot that provides real-time cricket match data, live scores, and AI-generated fantasy team recommendations. Get instant insights on player performances, captain/vice-captain suggestions, and strategic fantasy advice powered by live cricket APIs and OpenAI. Features include live match tracking, player analysis, scorecard breakdowns, and personalized team building guidance for fantasy cricket enthusiasts.It is the core feature of my Cricket Fantasy App",
+      tags: ["Real-time Data", "Live Scores", "Sports Chatbot", "Fantasy Recommendations","AI Assistant","Cricket Fantasy"],
       image: "https://i.ibb.co/wNq7qZ4p/In-Shot-20250528-112036172.jpg", // Placeholder image
-      
-      link: "#",
-      githubLink: "#",
+      link: "https://cricket-fantasy-flare.vercel.app/",
+      githubLink: "https://github.com/NANDHINI7390/cricket-fantasy-flare/tree/main/supabase/functions/cricket-assistant",
       category: "AI-integrated" as const,
-      badge: "Upcoming",
-      caseStudy: null, // No case study yet
-      isUpcoming: true,
+      badge: "Recent",
+      caseStudy:`
+**Challenge:**
+- Scattered match data across platforms making smart team selection difficult.
+- Lack of real-time player suggestions based on current form or conditions.
+- Need for intelligent assistance tailored to match context.
+
+**Approach:** Built a chatbot that combines:
+- Live cricket data from real-time APIs (e.g., player stats, match info, scorecards).
+- AI-powered responses using OpenAI or Gemini to generate team recommendations.
+- A clean, responsive chat interface for natural language queries like:
+  - “Who should be the captain today?”
+  - “Suggest a team for India vs Australia”
+
+The app fetches live stats → analyzes with AI → delivers contextual, user-friendly insights.
+
+**Result:**
+- Delivered accurate, real-time fantasy team suggestions.
+- Enabled interactive chat-based decision-making for T20, ODI, and Test matches.
+- Automated insights like pitch analysis, form ratings, and player comparisons.
+
+**Impact:**
+- Created a Dream11-like experience through conversational UI.
+- Showcased how live data + AI can power sports strategy.
+- Validated potential as a service for fantasy platforms, sports startups, and analytics firms.`,
+      isUpcoming: false, // Moved from upcoming to recent
     },
     
   ];
@@ -276,10 +298,10 @@ const ProjectsSection = () => {
         )}
  {/* Link to show upcoming projects */}
         {projects.filter(p => p.isUpcoming).length > 0 && (
- <div className="flex justify-center mt-12">
+ <div className="flex justify-center mt-12 animate-fade-in" style={{ animationDelay: "0.8s" }}>
  <div className="relative group cursor-pointer animate-fade-in" style={{ animationDelay: "0.8s" }} onClick={() => setShowUpcoming(!showUpcoming)} >
  <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
- {showUpcoming ? 'Hide upcoming projects' : 'More projects coming soon'}
+ {showUpcoming ? 'Hide upcoming projects' : 'View upcoming projects'}
 
 
  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />

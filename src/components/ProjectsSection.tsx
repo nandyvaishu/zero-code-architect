@@ -82,7 +82,7 @@ const ProjectsSection = () => {
     {
       title: "Cricket Fantasy App",
       description:
-        "Fantasy cricket app using LovableAI with Google login, live CricAPI data, wallet, leagues, and a chatbot prototype.",
+        "Fantasy cricket app with Google login, live CricAPI data, wallet, leagues, and a chatbot prototype.",
       tags: ["Lovable AI", "LowCode", "Fantasy Cricket", "Live API", "Dream11 Clone"],
       image: "https://i.ibb.co/NdKpttnS/In-Shot-20250519-114121114.jpg",
       link: "https://cricket-fantasy-flare.vercel.app/",

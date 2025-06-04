@@ -36,13 +36,13 @@ const TestimonialSection = () => {
             &ldquo; {/* Main testimonial content based on the Cricket Fantasy App project description */}
           </div>
           <p className="text-lg italic text-gray-700 dark:text-gray-300 mb-6 relative z-10">
-            "As a huge cricket fan, I'm seriously impressed with your fantasy app! The sign-in and Google login make it super easy to get started, and pulling in live match data via CricAPI is a game-changer. Creating leagues with friends and managing the wallet are seamless. Plus, that mock AI chatbot you added is a cool touch for interactive help. You've built a solid, full-featured platform!"
+            "As a huge cricket fan, I'm seriously impressed with your fantasy app! The sign-in and Google login make it super easy to get started, and pulling in live match data via CricAPI is a game-changer. Creating leagues with friends and managing the wallet are seamless. Plus, that AI chatbot you added is a cool touch works more like dream 11 chatbot for interactive help. You've built a solid, full-featured platform!"
           </p>
           <div className="text-right text-gray-800 dark:text-gray-200 font-semibold mt-4"> {/* Added margin-top */}
             - Shiva Kumar
           </div>
           <div className="text-right text-sm text-gray-500 dark:text-gray-400">
-            Brother & avid Cricket Fan
+            Founder of SIANA Vision &Cricket Fan
           </div>
           {/* Small cricket ball graphic */}
           <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg animate-spin-slow">

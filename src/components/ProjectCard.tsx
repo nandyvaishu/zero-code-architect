@@ -34,7 +34,13 @@ const ProjectCard: React.FC<ProjectProps> = ({
   onViewCaseStudy, // Destructure new prop
 }) => {
   return (
-    <div className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group h-full rounded-xl overflow-hidden bg-white dark:bg-gray-800/70 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 block"
+    >
+
       {/* Progressive border animation on hover */}
       <div className="relative">
         <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-customBlue-300 to-customBlue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
@@ -140,21 +146,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
         {/* Link buttons with animated arrow */}
         <div className="mt-auto pt-2 flex flex-col gap-2">
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-medium text-customBlue-600 dark:text-customBlue-400 hover:text-customBlue-800 dark:hover:text-customBlue-300 transition-colors relative group/link"
-            >
-              <span className="relative z-10 flex items-center">
-                View Project
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-all duration-300 group-hover/link:translate-x-1.5" />
-              </span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-customBlue-400/50 group-hover/link:w-full transition-all duration-500"></span>
-            </a>
-          )}
-          
           {demoLink && (
             <a
               href={demoLink}
@@ -171,7 +162,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

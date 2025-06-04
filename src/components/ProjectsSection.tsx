@@ -38,6 +38,7 @@ const ProjectsSection = () => {
       description:
         "Fully automated Job Scraper Workflow using n8n, integrating Gmail, RSS, Google Sheets, and Telegram. Fetches daily jobs and delivers them via Telegram.The output of this automation can be viewed directly through the linked Google Spreadsheet, which reflects the live data processed by the job scraping workflow previously hosted on n8n.",
  tags: ["Automation", "Job Scraper", "N8N", "Google Sheets API", "Telegram Bot"],
+      link: "https://docs.google.com/spreadsheets/d/1lzfqugnpNemL57n0ktGyLQlrY6kMOpZMvL7A9nvtydc/edit?gid=0#gid=0",
       image: "https://i.ibb.co/5WvcmS5C/In-Shot-20250521-071315412.jpg",
       badge: "Featured",
       category: "API-connected" as const,

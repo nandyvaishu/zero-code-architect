@@ -155,6 +155,33 @@ const ProjectsSection = () => {
 
 **Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
     },
+    {
+ title: "AI-Powered Legal Contract Analyzer",
+ description:
+ "An upcoming intelligent web app designed to automate the analysis of legal contracts. It will extract key clauses, highlight potential risks, and provide an interactive AI-powered Q&A interface — all secured with Supabase authentication and storage.",
+ tags:
+      ["AI", "Legal Tech", "Automation", "React", "Supabase", "LLM", "LangChain.js", "SaaS", "Upcoming"],
+ link: "",
+ githubLink: "https://github.com/NANDHINI7390/contract-risk-lens",
+ image: "https://i.ibb.co/jK6jhvC/In-Shot-20250605-090844332.jpg", 
+ badge: "Upcoming Project | MVP in Development | AI & Legal Tech",
+ category: "Artificial Intelligence / SaaS / Legal Technology" as const,
+ caseStudy: `
+ **Challenge:**
+ Manually reviewing legal contracts is slow and prone to errors. The challenge is building an AI-driven tool that can accurately parse contracts, highlight risks, and answer user questions interactively while maintaining data security.
+
+ **Approach:**
+ Leverage LovableAI to rapidly prototype the frontend with React and AI integration, connecting to Supabase for user authentication and secure contract storage. Use LLMs (OpenAI/Claude) for natural language contract analysis and interactive Q&A. Plan iterative development with prompt engineering for accurate AI responses.
+
+ **Result:**
+ (Expected) A cloud-based, scalable MVP that automates contract reviews, reducing manual workload and speeding up decision-making with AI insights.
+ The app will offer a seamless, user-friendly interface accessible on any device.
+
+ **Impact:**
+ Empowers legal professionals and businesses to improve contract review efficiency and accuracy. Demonstrates practical AI integration in SaaS products, enhancing client engagement and business growth potential.
+ `,
+ isUpcoming: true,
+ },
     // Recent Projects
     {
       title: "AI-Powered Cricket Fantasy Assistant",
@@ -194,11 +221,12 @@ The app fetches live stats → analyzes with AI → delivers contextual, user-fr
     },
     
   ];
+  const upcomingProjects = projects.filter(p => p.isUpcoming);
 
   const categories = Array.from(new Set(projects.filter(p => !p.isUpcoming).map((p) => p.category)));
 
   const handleViewCaseStudy = (caseStudy: string) => {
- setActiveCaseStudy(caseStudy);
+    setActiveCaseStudy(caseStudy);
  setOpen(true);
   };
   const filteredProjects = activeFilter
@@ -283,13 +311,14 @@ The app fetches live stats → analyzes with AI → delivers contextual, user-fr
  )}
 
         {/* Upcoming Projects (conditionally rendered) */}
-        {showUpcoming && projects.filter(p => p.isUpcoming).length > 0 && (
+        {showUpcoming && upcomingProjects.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 animate-fade-in-up">
             {projects
- .filter(p => p.isUpcoming)
+              .filter(p => p.isUpcoming)
               .slice(0, 1).map((project, index) => (
-               <ProjectCard
+              <ProjectCard
                key={project.title}
+               githubLink={project.githubLink} // Explicitly pass githubLink
                {...project}
                onViewCaseStudy={handleViewCaseStudy}
              />
@@ -297,19 +326,21 @@ The app fetches live stats → analyzes with AI → delivers contextual, user-fr
           </div>
         )}
  {/* Link to show upcoming projects */}
-        {projects.filter(p => p.isUpcoming).length > 0 && (
- <div className="flex justify-center mt-12 animate-fade-in" style={{ animationDelay: "0.8s" }}>
- <div className="relative group cursor-pointer animate-fade-in" style={{ animationDelay: "0.8s" }} onClick={() => setShowUpcoming(!showUpcoming)} >
- <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
- {showUpcoming ? 'Hide upcoming projects' : 'View upcoming projects'}
-
-
- <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />
- </div>
- <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-400 group-hover:w-full transition-all duration-700"></div>
- </div>
+        {upcomingProjects.length > 0 && (
+          <div className="flex justify-center mt-12 animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            <div
+              className="relative group cursor-pointer animate-fade-in"
+              style={{ animationDelay: "0.8s" }}
+              onClick={() => setShowUpcoming(!showUpcoming)}
+            >
+              <div className="text-customBlue-600 dark:text-customBlue-400 font-medium flex items-center group-hover:text-customBlue-800 dark:group-hover:text-customBlue-300 transition-colors duration-300">
+                {showUpcoming ? 'Hide upcoming projects' : 'View upcoming projects'}
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-500" />
+              </div>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-customBlue-400 group-hover:w-full transition-all duration-700"></div>
             </div>
- )}
+ </div>
+        )}
       </div>
 
 

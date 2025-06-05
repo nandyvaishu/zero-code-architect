@@ -161,7 +161,7 @@ const ProjectsSection = () => {
  "An upcoming intelligent web app designed to automate the analysis of legal contracts. It will extract key clauses, highlight potential risks, and provide an interactive AI-powered Q&A interface — all secured with Supabase authentication and storage.",
  tags:
       ["AI", "Legal Tech", "Automation", "React", "Supabase", "LLM", "LangChain.js", "SaaS", "Upcoming"],
- link: "",
+ link: "https://contract-risk-lens.vercel.app/",
  githubLink: "https://github.com/NANDHINI7390/contract-risk-lens",
  image: "https://i.ibb.co/jK6jhvC/In-Shot-20250605-090844332.jpg", 
  badge: "Upcoming Project | MVP in Development | AI & Legal Tech",

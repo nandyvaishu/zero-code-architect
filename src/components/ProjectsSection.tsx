@@ -156,6 +156,58 @@ const ProjectsSection = () => {
 **Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
     },
     {
+      title: "FortuneVerse: AI-Powered Fortune Cookie App",
+      description:
+        "Built with Next.js, Genkit, and Docker, FortuneVerse generates and rewrites fortunes using Google's Gemini model. Features modern UI, API, and containerized deployment.The live deployment was previously hosted on Render's free tier. While it’s currently paused, I’d be happy to share a Firebase Studio preview or provide a quick walkthrough upon request.The complete codebase is available on GitHub.",
+      tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
+      image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
+      link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
+      githubLink: "https://github.com/nandyvaishu/studio.git",
+      category: "Prompt-built" as const,
+      badge: "Featured",
+      caseStudy: `
+**Challenge:** Create an interactive web app using generative AI to simulate fortune cookies.
+
+**Approach:** Built with:
+- Next.js (UI & logic),
+- Genkit for Gemini AI integration,
+- Docker for containerization,
+- ShadCN for styling.
+
+**Result:**
+- Users receive and edit fortunes.
+- Gemini rewrites them dynamically.
+- Clean API and UI with full-stack structure.
+
+**Impact:** Blended frontend innovation with AI and backend infra into one responsive product.`,
+    },
+    {
+      title: "BloomShop – A Luxury E-commerce Web Experience",
+      description:
+        "BloomShop is a sleek, responsive e-commerce website designed to help luxury brands establish a high-end digital presence. With a rich royal color palette, modern UI, and smooth shopping flow, it offers an elegant solution for businesses seeking a fast, premium online store experience.",
+      tags: ["E-commerce Website", "Responsive Web Design", "Online Store", "UI/UX Design", "Client-Facing Demo"],
+      image: "https://i.ibb.co/fdPt8m12/In-Shot-20250616-133056926.jpg",
+      link: "https://launch-and-bloom-shop.vercel.app/",
+      githubLink: "https://github.com/nandyvaishu/launch-and-bloom-shop.git",
+      category: "Prompt-built" as const,
+      badge: "Featured",
+      caseStudy: `
+**Challenge:**
+- Needed a quick e-commerce demo for luxury clients.
+-Design had to feel premium and responsive.
+
+**Approach:** :
+- Used AI with a custom prompt,
+- Applied a rich, royal color palette and clean layout.
+
+**Result:**
+- Fully functional front-end store with cart and checkout.
+- Ready for client demos, no backend required.
+
+**Impact:** 
+-Showcased prompt engineering power.`,
+    },
+    {
  title: "AI-Powered Legal Contract Analyzer",
  description:
  "An upcoming intelligent web app designed to automate the analysis of legal contracts. It will extract key clauses, highlight potential risks, and provide an interactive AI-powered Q&A interface — all secured with Supabase authentication and storage.",
@@ -179,6 +231,47 @@ const ProjectsSection = () => {
 
  **Impact:**
  Empowers legal professionals and businesses to improve contract review efficiency and accuracy. Demonstrates practical AI integration in SaaS products, enhancing client engagement and business growth potential.
+ `,
+ isUpcoming: true,
+ }, {
+ title: "Placeholder Project 1",
+ description:
+ "This is a placeholder description for an upcoming project. It will detail the project's goals, technologies used, and expected impact. Stay tuned for updates!",
+ tags: ["Placeholder", "Upcoming", "Tech 1", "Tech 2"],
+ image: "https://via.placeholder.com/400x250", // Placeholder image URL
+ link: "#", // Placeholder link
+ githubLink: "#", // Placeholder GitHub link
+ category: "Upcoming" as const,
+ badge: "Coming Soon",
+ caseStudy: `
+ **Challenge:** Placeholder challenge description.
+
+ **Approach:** Placeholder approach description.
+
+ **Result:** Placeholder result description.
+
+ **Impact:** Placeholder impact description.
+ `,
+ isUpcoming: true,
+ },
+ {
+ title: "Placeholder Project 2",
+ description:
+ "Another exciting project in the works! This placeholder outlines the core concept and potential applications. More details will be available soon.",
+ tags: ["Placeholder", "Upcoming", "Innovation", "Research"],
+ image: "https://via.placeholder.com/400x250", // Placeholder image URL
+ link: "#", // Placeholder link
+ githubLink: "#", // Placeholder GitHub link
+ category: "Upcoming" as const,
+ badge: "In Development",
+ caseStudy: `
+ **Challenge:** Placeholder challenge description for project 2.
+
+ **Approach:** Placeholder approach description for project 2.
+
+ **Result:** Placeholder result description for project 2.
+
+ **Impact:** Placeholder impact description for project 2.
  `,
  isUpcoming: true,
  },

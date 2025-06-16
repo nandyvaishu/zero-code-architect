@@ -208,6 +208,36 @@ const ProjectsSection = () => {
 -Showcased prompt engineering power.`,
     },
     {
+      title: "SoulSync – An Emotional AI Companion Web App",
+      description:
+        "SoulSync is a full-featured emotional wellness companion web application designed to provide comfort, conversation, and care. It features a lifelike, talking avatar that interacts through both voice and text, tracks user mood, suggests mood-based movies and songs, and offers journaling space and a comfort room with ambient experiences like rain sounds and calming visuals.Built with a React-based frontend and powered by Supabase as the backend for managing chat history, mood logs, and user preferences. SoulSync is fully responsive, secure, and optimized for real-time emotional support and personal reflection.",
+      tags: ["PersonalWellnessPlatform", "WebSpeechAPI", "SpeechSynthesis", "Supabase", "React","Voice Chat"],
+      image: "https://i.ibb.co/DPkGkT6w/In-Shot-20250616-214235632.jpg",
+      link: "https://gentle-sway-companion.vercel.app/",
+      githubLink: "https://github.com/nandyvaishu/gentle-sway-companion.git",
+      category: "Prompt-built" as const,
+      badge: "Featured",
+      caseStudy: `
+**Challenge:**
+- Create a real-time emotional companion with human-like avatar and voice interaction.
+-Store and manage user-generated data securely.
+
+**Approach:** :
+- Integrated Web Speech API for voice input and SpeechSynthesis for avatar responses.
+- Implemented mood-based content suggestions (e.g., Spotify/Netflix links) in a dedicated recommendations panel.
+
+**Result:**
+- Seamless voice-enabled conversation with a human-like avatar.
+- Clean navigation structure and scalable UI for future SaaS potential.
+
+
+
+**Impact:** 
+-Demonstrates advanced frontend engineering and UX strategy in emotional AI space.
+-Showcases use of browser-native APIs and Supabase integration without relying on paid AI APIs.
+-Suitable for portfolio, client pitch, or as an MVP for a SaaS wellness product.`,
+    },
+    {
  title: "AI-Powered Legal Contract Analyzer",
  description:
  "An upcoming intelligent web app designed to automate the analysis of legal contracts. It will extract key clauses, highlight potential risks, and provide an interactive AI-powered Q&A interface — all secured with Supabase authentication and storage.",

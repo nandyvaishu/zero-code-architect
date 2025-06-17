@@ -155,32 +155,7 @@ const ProjectsSection = () => {
 
 **Impact:** Proved that complex relational apps can be built quickly with no-code tools and strong UX.`,
     },
-    {
-      title: "FortuneVerse: AI-Powered Fortune Cookie App",
-      description:
-        "Built with Next.js, Genkit, and Docker, FortuneVerse generates and rewrites fortunes using Google's Gemini model. Features modern UI, API, and containerized deployment.The live deployment was previously hosted on Render's free tier. While it’s currently paused, I’d be happy to share a Firebase Studio preview or provide a quick walkthrough upon request.The complete codebase is available on GitHub.",
-      tags: ["Docker", "Next.js", "Generative AI", "React", "API Development"],
-      image: "https://i.ibb.co/q3Ww0Ppq/In-Shot-20250524-120514247.jpg",
-      link: "https://youtu.be/MApv_XHLJxU?si=vqRqfJXKI4gjU9ae",
-      githubLink: "https://github.com/nandyvaishu/studio.git",
-      category: "Prompt-built" as const,
-      badge: "Featured",
-      caseStudy: `
-**Challenge:** Create an interactive web app using generative AI to simulate fortune cookies.
-
-**Approach:** Built with:
-- Next.js (UI & logic),
-- Genkit for Gemini AI integration,
-- Docker for containerization,
-- ShadCN for styling.
-
-**Result:**
-- Users receive and edit fortunes.
-- Gemini rewrites them dynamically.
-- Clean API and UI with full-stack structure.
-
-**Impact:** Blended frontend innovation with AI and backend infra into one responsive product.`,
-    },
+    
     {
       title: "BloomShop – A Luxury E-commerce Web Experience",
       description:
